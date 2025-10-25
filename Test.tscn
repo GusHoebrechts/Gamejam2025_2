@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://b2ijq384bfke6"]
+[gd_scene load_steps=7 format=4 uid="uid://okptrh2hrsoi"]
 
-[ext_resource type="PackedScene" uid="uid://b1du422o05mag" path="res://Player.tscn" id="1_2au82"]
-[ext_resource type="PackedScene" uid="uid://x8xlp656yn55" path="res://Killbox.tscn" id="2_8tn2x"]
-[ext_resource type="PackedScene" uid="uid://c2min8mhx51ea" path="res://RespawnPoint.tscn" id="3_aq4fw"]
-[ext_resource type="PackedScene" uid="uid://clvcniggs3ocb" path="res://ground.tscn" id="4_8tn2x"]
-[ext_resource type="PackedScene" uid="uid://biyups2octm4n" path="res://Hazards.tscn" id="5_aq4fw"]
-[ext_resource type="PackedScene" uid="uid://cr7v1l3clgmko" path="res://Camera.tscn" id="6_ivycn"]
+[ext_resource type="PackedScene" path="res://Player.tscn" id="1_2au82"]
+[ext_resource type="PackedScene" path="res://Killbox.tscn" id="2_8tn2x"]
+[ext_resource type="PackedScene" path="res://RespawnPoint.tscn" id="3_aq4fw"]
+[ext_resource type="PackedScene" path="res://ground.tscn" id="4_8tn2x"]
+[ext_resource type="PackedScene" path="res://Hazards.tscn" id="5_aq4fw"]
+[ext_resource type="PackedScene" path="res://Camera.tscn" id="6_ivycn"]
 
 [node name="Node2D" type="Node2D"]
 

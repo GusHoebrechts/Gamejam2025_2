@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://dnhjlfe38j4wy"]
+
+[ext_resource type="Script" uid="uid://c5f7yxwytypi3" path="res://scripting/Enemies/gargoylebehaviour.gd" id="1_frc2u"]
+[ext_resource type="Texture2D" uid="uid://ctk0tqp6ha50f" path="res://free_assests/enemies/Gargoyle/New Piskel.png" id="1_y58c1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y58c1"]
+size = Vector2(24, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frc2u"]
+atlas = ExtResource("1_y58c1")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhbnb"]
+atlas = ExtResource("1_y58c1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_atdjq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frc2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhbnb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Gargoyle" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+texture_filter = 1
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_frc2u")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_y58c1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RigidBody2D"]
+sprite_frames = SubResource("SpriteFrames_atdjq")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="Timer" to="RigidBody2D" method="_on_timer_timeout"]
