@@ -1,7 +1,6 @@
-extends RigidBody2D
+extends Node2D
 
-enum state {Idle,Shooting}
-var projectile
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -10,11 +9,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
 
-
+func change_sprite():
+	$RigidBody2D/AnimatedSprite2D.frame = 1
+	pass
 
 func _on_timer_timeout() -> void:
-	print("Timer called")
-	projectile = get_node("WaterProjectile")
+	change_sprite()
 	pass # Replace with function body.

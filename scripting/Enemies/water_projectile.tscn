@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bua0t8kiwjwhq"]
+[gd_scene load_steps=7 format=3 uid="uid://bua0t8kiwjwhq"]
 
+[ext_resource type="Script" uid="uid://djypcl1gwkmdr" path="res://scripting/Enemies/water_projectile.gd" id="1_qcgct"]
 [ext_resource type="Texture2D" uid="uid://d2sl8x3cwf07k" path="res://free_assests/enemies/Gargoyle/New Piskel (1).png" id="1_uv4id"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qcgct"]
@@ -23,14 +24,16 @@ animations = [{
 "texture": SubResource("AtlasTexture_n4rb7")
 }],
 "loop": true,
-"name": &"default",
+"name": &"Second",
 "speed": 5.0
 }]
 
 [node name="WaterProjectile" type="Node2D"]
+script = ExtResource("1_qcgct")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 linear_velocity = Vector2(0, 100)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("RectangleShape2D_qcgct")
@@ -39,3 +42,11 @@ shape = SubResource("RectangleShape2D_qcgct")
 texture_filter = 1
 position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_u6pxa")
+animation = &"Second"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

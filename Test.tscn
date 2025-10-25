@@ -1,14 +1,16 @@
-[gd_scene load_steps=8 format=4 uid="uid://b2ijq384bfke6"]
+[gd_scene load_steps=9 format=4 uid="uid://okptrh2hrsoi"]
 
-[ext_resource type="PackedScene" uid="uid://cm8jsnwi5bsy8" path="res://Player.tscn" id="1_2au82"]
+[ext_resource type="PackedScene" path="res://Player.tscn" id="1_2au82"]
+[ext_resource type="Script" uid="uid://biophusn17tct" path="res://test.gd" id="1_qs82m"]
 [ext_resource type="PackedScene" path="res://Killbox.tscn" id="2_8tn2x"]
-[ext_resource type="PackedScene" uid="uid://dyyiodgopnanx" path="res://RespawnPoint.tscn" id="3_aq4fw"]
-[ext_resource type="PackedScene" uid="uid://c1ccrm3ss1tjj" path="res://ground.tscn" id="4_8tn2x"]
-[ext_resource type="PackedScene" uid="uid://b40o8gpda0lsh" path="res://Hazards.tscn" id="5_aq4fw"]
-[ext_resource type="PackedScene" uid="uid://cr7v1l3clgmko" path="res://Camera.tscn" id="6_ivycn"]
-[ext_resource type="PackedScene" uid="uid://ciaqhw0fkf51t" path="res://Background.tscn" id="7_q1uvj"]
+[ext_resource type="PackedScene" path="res://RespawnPoint.tscn" id="3_aq4fw"]
+[ext_resource type="PackedScene" path="res://ground.tscn" id="4_8tn2x"]
+[ext_resource type="PackedScene" path="res://Hazards.tscn" id="5_aq4fw"]
+[ext_resource type="PackedScene" path="res://Camera.tscn" id="6_ivycn"]
+[ext_resource type="PackedScene" path="res://Background.tscn" id="7_q1uvj"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_qs82m")
 
 [node name="Player" parent="." node_paths=PackedStringArray("teleport") instance=ExtResource("1_2au82")]
 position = Vector2(-1, -50)

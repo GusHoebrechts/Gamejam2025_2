@@ -8,6 +8,10 @@ const Coyote_Time = 0.1
 const Buffer_Time = 0.1
 const Snap_Len = 8
 
+var gargoyle = preload("res://scripting/Enemies/gargoyle.tscn")
+var reference = self
+var gargoyle_spawned = false
+
 
 enum State{Idle,Running,Walking,Jumping, Falling}
 
@@ -21,6 +25,10 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	
+		
+		
+		
 	#Timers
 	if(is_on_floor()):
 		Coyote_Left=Coyote_Time
