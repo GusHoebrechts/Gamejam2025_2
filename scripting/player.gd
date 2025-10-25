@@ -34,6 +34,9 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		
+	if Input.is_action_just_pressed("Reset"):
+		_reset()
 	# Handle jump.
 	if Input.is_action_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -86,7 +89,6 @@ func _physics_process(delta: float) -> void:
 				$AnimatedSprite2D.flip_h = false
 		State.Running:
 			$AnimatedSprite2D.play("Runninng")
-			print("Running")
 			if velocity.x<0:
 				$AnimatedSprite2D.flip_h = true
 			if velocity.x>0:
@@ -95,5 +97,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
+	_reset()
+func _reset():
 	global_position=teleport.global_position
 	velocity=Vector2.ZERO

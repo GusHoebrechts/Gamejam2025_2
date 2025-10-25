@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b1du422o05mag"]
+[gd_scene load_steps=31 format=3 uid="uid://cm8jsnwi5bsy8"]
 
 [ext_resource type="Script" uid="uid://c25a5pjiulfqy" path="res://scripting/player.gd" id="1_3tkgg"]
 [ext_resource type="Texture2D" uid="uid://cmixced0nlxt3" path="res://free_assests/hero_sprites/Player/Owlet_Monster_Jump_8.png" id="2_l6ohk"]
@@ -196,7 +196,6 @@ radius = 5.0
 height = 20.0
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(0, 50)
 script = ExtResource("1_3tkgg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

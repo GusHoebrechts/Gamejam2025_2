@@ -1,0 +1,46 @@
+[gd_scene load_steps=10 format=4 uid="uid://cus1pw6rlogkw"]
+
+[ext_resource type="PackedScene" uid="uid://cm8jsnwi5bsy8" path="res://Player.tscn" id="1_73or5"]
+[ext_resource type="PackedScene" uid="uid://c1ccrm3ss1tjj" path="res://ground.tscn" id="2_jldhp"]
+[ext_resource type="PackedScene" uid="uid://dyyiodgopnanx" path="res://RespawnPoint.tscn" id="3_tyy4w"]
+[ext_resource type="PackedScene" uid="uid://ciaqhw0fkf51t" path="res://Background.tscn" id="4_swigd"]
+[ext_resource type="PackedScene" uid="uid://x8xlp656yn55" path="res://Killbox.tscn" id="5_hp7xp"]
+[ext_resource type="PackedScene" uid="uid://cr7v1l3clgmko" path="res://Camera.tscn" id="6_tpsgm"]
+[ext_resource type="PackedScene" uid="uid://b40o8gpda0lsh" path="res://Hazards.tscn" id="7_538ju"]
+[ext_resource type="PackedScene" uid="uid://c2mkpo4vnnwvr" path="res://change_respawn.tscn" id="8_jldhp"]
+[ext_resource type="PackedScene" uid="uid://crmwllx118wgv" path="res://enemy.tscn" id="9_tyy4w"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." node_paths=PackedStringArray("teleport") instance=ExtResource("1_73or5")]
+position = Vector2(0, -100)
+teleport = NodePath("../RespawnPoint")
+
+[node name="RespawnPoint" parent="." instance=ExtResource("3_tyy4w")]
+position = Vector2(0, -100)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("4_swigd")]
+
+[node name="Killbox" parent="." node_paths=PackedStringArray("teleport") instance=ExtResource("5_hp7xp")]
+position = Vector2(0, -200)
+teleport = NodePath("../RespawnPoint")
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_tpsgm")]
+limit_right = 900
+limit_bottom = -20
+player = NodePath("../Player")
+
+[node name="Hazards" parent="." instance=ExtResource("7_538ju")]
+tile_map_data = PackedByteArray("AAAgAPv/AwANAAIAAAAhAPv/AwANAAIAAAAiAPv/AwANAAIAAAAjAPv/AwANAAIAAAAgAPz/AwANAAMAAAAgAP3/AwANAAMAAAAhAP3/AwANAAMAAAAhAPz/AwANAAMAAAAiAP3/AwANAAMAAAAiAPz/AwANAAMAAAAjAPz/AwANAAMAAAAjAP3/AwANAAMAAAA=")
+
+[node name="Ground" parent="." instance=ExtResource("2_jldhp")]
+tile_map_data = PackedByteArray("AAD+//z/AwABAAEAAAD///z/AwACAAEAAAAAAPz/AwACAAAAAAD+//3/AwABAAYAAAD///3/AwACAAYAAAAAAP3/AwACAAYAAAD+//7/AwABAAcAAAD///7/AwACAAYAAAAAAP7/AwACAAYAAAABAP3/AwADAAYAAAABAP7/AwADAAYAAAABAPz/AwADAAEAAAACAPz/AwAAAAEAAAADAPz/AwAAAAEAAAAEAPz/AwAAAAEAAAAFAPz/AwAAAAEAAAAFAP3/AwAAAAEAAAAEAP3/AwAAAAEAAAADAP3/AwAAAAEAAAACAP3/AwAAAAEAAAACAP7/AwAAAAEAAAADAP7/AwAAAAEAAAAEAP7/AwAAAAEAAAAFAP7/AwAAAAEAAAAGAPz/AwAAAAEAAAAGAPv/AwAAAAEAAAAHAPz/AwAAAAEAAAAIAPz/AwAAAAEAAAAJAPz/AwAAAAEAAAAGAP3/AwAAAAEAAAAHAP3/AwAAAAEAAAAIAP3/AwAAAAEAAAAJAP3/AwAAAAEAAAAJAP7/AwAAAAEAAAAIAP7/AwAAAAEAAAAHAP7/AwAAAAEAAAAGAP7/AwAAAAEAAAAKAPz/AwAAAAEAAAAOAPz/AwAAAAEAAAAPAPz/AwAAAAEAAAAQAPz/AwAAAAEAAAAKAP3/AwAAAAEAAAALAP3/AwAAAAEAAAAMAP3/AwAAAAEAAAANAP3/AwAAAAEAAAAOAP3/AwAAAAEAAAAPAP3/AwAAAAEAAAAQAP3/AwAAAAEAAAARAP3/AwAAAAEAAAARAP7/AwAAAAEAAAAQAP7/AwAAAAEAAAAPAP7/AwAAAAEAAAAOAP7/AwAAAAEAAAANAP7/AwAAAAEAAAAMAP7/AwAAAAEAAAALAP7/AwAAAAEAAAAKAP7/AwAAAAEAAAASAP3/AwAAAAEAAAASAP7/AwAAAAEAAAATAP7/AwAAAAEAAAATAP3/AwAAAAEAAAATAPz/AwAAAAEAAAAUAP7/AwAAAAEAAAAUAP3/AwAAAAEAAAAUAPz/AwAAAAEAAAAIAPv/AwAAAAEAAAAIAPr/AwAAAAEAAAAOAPv/AwAAAAEAAAAOAPr/AwAAAAEAAAAVAPz/AwAAAAEAAAAVAP3/AwAAAAEAAAAVAP7/AwAAAAEAAAALAPz/AwAAAAEAAAAMAPz/AwAAAAEAAAANAPz/AwAAAAEAAAAPAPv/AwAAAAEAAAATAPr/AwAAAAEAAAATAPv/AwAAAAEAAAAWAP7/AwAAAAEAAAAXAP7/AwAAAAEAAAAYAP7/AwAAAAEAAAAZAP7/AwAAAAEAAAAaAP7/AwAAAAEAAAAbAP7/AwAAAAEAAAAcAP7/AwAAAAEAAAAdAPz/AwAAAAAAAAAdAP7/AwAAAAAAAAAUAPr/AwAAAAEAAAAUAPv/AwAAAAEAAAAVAPv/AwAAAAEAAAAVAPr/AwAAAAEAAAAWAPv/AwAAAAEAAAAWAPz/AwAAAAEAAAAWAP3/AwAAAAEAAAAXAP3/AwAAAAEAAAAXAPz/AwAAAAEAAAAYAP3/AwAAAAEAAAAdAPr/AwAAAAAAAAAdAPv/AwAAAAEAAAAdAP3/AwAAAAAAAAAeAPr/AwAAAAAAAAAeAPv/AwAAAAAAAAAeAPz/AwAAAAAAAAAeAP3/AwAAAAAAAAAeAP7/AwAAAAAAAAAfAPr/AwAAAAAAAAAfAPv/AwAAAAAAAAAfAPz/AwAAAAAAAAAfAP3/AwAAAAAAAAAfAP7/AwAAAAAAAAAgAP7/AwAAAAAAAAAhAP7/AwAAAAAAAAAiAP7/AwAAAAAAAAAjAP7/AwAAAAAAAAAkAP7/AwAAAAAAAAAkAPr/AwAAAAAAAAAkAPv/AwAAAAAAAAAkAPz/AwAAAAAAAAAkAP3/AwAAAAAAAAAlAPz/AwAAAAEAAAAlAPv/AwAAAAEAAAAlAPr/AwAAAAEAAAAlAP3/AwAAAAAAAAAlAP7/AwAAAAAAAAAeAPn/AwAMAAUAAAAmAPz/AwAAAAAAAAAmAP3/AwAAAAAAAAAmAP7/AwAAAAAAAAAnAP7/AwAAAAAAAAAnAP3/AwAAAAAAAAAoAP3/AwAAAAAAAAAoAPz/AwAAAAAAAAAnAPz/AwAAAAAAAAAoAP7/AwAAAAAAAAApAP7/AwAAAAAAAAAqAP7/AwAAAAAAAAAqAP3/AwAAAAAAAAApAP3/AwAAAAAAAAApAPz/AwAAAAAAAAAqAPz/AwAAAAAAAAArAPz/AwAAAAAAAAArAP3/AwAAAAAAAAArAP7/AwAAAAAAAAAsAP7/AwAAAAAAAAAsAP3/AwAAAAAAAAAsAPz/AwAAAAAAAAAtAPz/AwAAAAAAAAAtAP3/AwAAAAAAAAAtAP7/AwAAAAAAAAAuAPz/AwAAAAAAAAAuAP3/AwAAAAAAAAAuAP7/AwAAAAAAAAAvAP3/AwAAAAAAAAAvAPz/AwAAAAAAAAAvAP7/AwAAAAAAAAAwAP7/AwAAAAAAAAAwAP3/AwAAAAAAAAAwAPz/AwAAAAAAAAAxAP3/AwAAAAAAAAAxAP7/AwAAAAAAAAAxAPz/AwAAAAAAAAA=")
+
+[node name="ChangeRespawn" parent="." node_paths=PackedStringArray("respawn") instance=ExtResource("8_jldhp")]
+position = Vector2(486, -104)
+respawn = NodePath("../RespawnPoint")
+
+[node name="Enemy" parent="." node_paths=PackedStringArray("player", "ground") instance=ExtResource("9_tyy4w")]
+position = Vector2(629, -65)
+player = NodePath("../Player")
+ground = NodePath("../Ground")

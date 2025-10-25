@@ -3,4 +3,5 @@ extends Camera2D
 @export var player: Node2D
 
 func _process(delta):
-	position = player.global_position
+	if player:
+		position = player.global_position
