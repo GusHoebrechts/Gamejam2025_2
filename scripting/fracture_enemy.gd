@@ -18,11 +18,9 @@ var check_dst = 10
 
 var direction
 var grounded
-var jump
+var jump=false
 var last_x
-
-func _ready():
-	last_x =global_position.x
+var dx
 	
 
 func _physics_process(delta: float) -> void:
@@ -39,15 +37,23 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.play("Idle")
 			
 		State.Chase:
+			if(stuckTimer.time_left<=0):
+				last_x=global_position
+				stuckTimer.start(0.1)
+			dx=last_x-global_position
 			$AnimatedSprite2D.play('Walking')
-			stuckTimer.start(0.1)
+			dx = abs(global_position.x - last_x)
 			if(player.position.x-self.position.x>0):
 				direction = 1
 			else: 
 				direction =-1
 			if(grounded):
 				velocity.x=SPEED*direction
-			
+				print(dx)
+				print(jump)
+				
+				if(dx==0)&&jump:
+					velocity.y=JUMP_VELOCITY
 		
 func _look_for_player():
 	if rc_high.is_colliding() or rc_low.is_colliding():
@@ -60,7 +66,6 @@ func _look_for_player():
 			jump=true
 	if state==State.Chase and (timer.time_left<=0):
 			state=State.Idle
-			print("here")
 	move_and_slide()
 	
 	
