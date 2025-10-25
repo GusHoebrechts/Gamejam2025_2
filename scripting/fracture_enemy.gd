@@ -6,8 +6,6 @@ const JUMP_VELOCITY = -50
 enum State{Idle,Chase}
 var state=State.Idle
 var check_dst = 10
-var left_bounds
-var right_bounds
 
 @onready var rc_low: RayCast2D  = $RayCast_Low
 @onready var rc_high: RayCast2D = $RayCast_High
@@ -21,10 +19,11 @@ var right_bounds
 var direction
 var grounded
 var jump
+var last_x
 
 func _ready():
-	left_bounds = self.position + Vector2(-125,0)
-	right_bounds =self.position + Vector2(125,0)
+	last_x =global_position.x
+	
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

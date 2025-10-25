@@ -135,7 +135,7 @@ texture_filter = 1
 position = Vector2(-2, -28)
 sprite_frames = SubResource("SpriteFrames_2dyae")
 animation = &"Idle"
-frame_progress = 0.9860287
+frame_progress = 0.11768838
 
 [node name="RayCast_Low" type="RayCast2D" parent="."]
 position = Vector2(0, -26)
