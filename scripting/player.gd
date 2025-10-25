@@ -97,7 +97,9 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	_reset()
+	if(body.is_in_group("Hazard")||body.is_in_group("Enemy")):
+		_reset()
+
 func _reset():
 	global_position=teleport.global_position
 	velocity=Vector2.ZERO

@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED = 110
 const JUMP_VELOCITY = -170
 
-enum State{Idle,Chase}
+enum State{Idle,Chase,Death}
 var state=State.Idle
 var check_dst = 10
 
@@ -13,8 +13,11 @@ var check_dst = 10
 @onready var timer =$Timer
 @onready var stuckTimer =$Timer2
 @onready var IdleTimer =$IdleTimer
+@onready var RestTimer = $RestTimer
+
 @export var player:CharacterBody2D
 @export var ground:TileMapLayer
+@export var hazard:TileMapLayer
 
 var direction=1
 var grounded
@@ -25,8 +28,10 @@ var x
 var y
 var rng = RandomNumberGenerator.new()
 var my_random_number=0
+var 	dead =false
 
 func _ready() -> void:
+	$AnimatedSprite2D2.visible=false
 	x = rc_ground.position.x
 	y = rc_ground.position.y
 	my_random_number = rng.randf_range(0, 10.0)
@@ -44,13 +49,9 @@ func _physics_process(delta: float) -> void:
 	match state:
 		State.Idle:
 			$AnimatedSprite2D.play("Idle")
-			$AnimatedSprite2D.flip_h = true
-			print("idle")
 			_walk_arround()
 			
-			
 		State.Chase:
-			print("chasing")
 			$AnimatedSprite2D.play('Walking')
 			dx=abs(last_x-global_position.x)
 			if(stuckTimer.time_left<=0):
@@ -59,11 +60,10 @@ func _physics_process(delta: float) -> void:
 			dx = abs(global_position.x - last_x)
 			if(player.position.x-self.position.x>0):
 				direction = 1
-				$AnimatedSprite2D.flip_h = false
+				
 				_flip_rays()
 			else: 
 				direction =-1
-				$AnimatedSprite2D.flip_h = true
 				_flip_rays()
 			if(grounded):
 				velocity.x=SPEED*direction
@@ -71,8 +71,10 @@ func _physics_process(delta: float) -> void:
 				if(jump):
 					jump=false
 					velocity.y=JUMP_VELOCITY
-				state=State.Idle
-				
+				if(timer.time_left<=0):
+					state=State.Idle
+		State.Death:
+			velocity=Vector2.ZERO
 		
 func _look_for_player():
 	if rc_high.is_colliding() or rc_low.is_colliding():
@@ -90,20 +92,40 @@ func _flip_rays():
 	if(direction==-1):
 		rc_low.rotation_degrees=180
 		rc_high.rotation_degrees=180
+		$AnimatedSprite2D.flip_h = true
 		rc_ground.position= Vector2(x*direction,y) #bad code
 	else:
 		rc_low.rotation_degrees=0
 		rc_high.rotation_degrees=0
 		rc_ground.position= Vector2(x,y)
+		$AnimatedSprite2D.flip_h = false
 		
 func _walk_arround():
-	if(IdleTimer.time_left<=0):
+	$AnimatedSprite2D.play("Idle")
+	dx = abs(global_position.x - last_x)
+	if(IdleTimer.time_left<=0.5):
 		last_x=global_position.x
 		IdleTimer.start(my_random_number)
-	velocity.x=SPEED/2*direction
-	if(dx<=0&&stuckTimer.time_left<=0):
-		direction=-direction
-		last_x=global_position.x
-		stuckTimer.start(0.75)
+	velocity.x=SPEED/4*direction
+	if(RestTimer.time_left<=0.5|| not grounded):
+		if((dx<=0 and stuckTimer.time_left<=0) || not grounded):
+			direction=-direction
+			_flip_rays()
+			stuckTimer.start(0.75)
+			RestTimer.start(3)
 	
 	
+
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if dead: return
+	if(body.is_in_group("Hazard")):
+		call_deferred("_death")
+func _death() -> void:
+	state=State.Death
+	dead=true;
+	$CollisionShape2D.disabled = true
+	$AnimatedSprite2D2.visible=true
+	$AnimatedSprite2D2.play("default")
+	await $AnimatedSprite2D2.animation_finished
+	queue_free()

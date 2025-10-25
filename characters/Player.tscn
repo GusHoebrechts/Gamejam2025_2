@@ -189,7 +189,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6ohk"]
-size = Vector2(11, 20)
+size = Vector2(8, 22)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oudfo"]
 radius = 5.0
@@ -204,14 +204,14 @@ sprite_frames = SubResource("SpriteFrames_3tkgg")
 animation = &"Runninng"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
+position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_l6ohk")
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, 6)
+position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_oudfo")
 debug_color = Color(0.9846013, 0, 0.34648642, 0.41960785)
 
