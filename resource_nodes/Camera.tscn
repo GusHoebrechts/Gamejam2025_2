@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cr7v1l3clgmko"]
 
-[ext_resource type="Script" uid="uid://bcoaam15ci1gs" path="res://camera.gd" id="1_a0f6b"]
+[ext_resource type="Script" uid="uid://bcoaam15ci1gs" path="res://scripting/camera.gd" id="1_a0f6b"]
 
 [node name="Camera2D" type="Camera2D"]
 visible = false
