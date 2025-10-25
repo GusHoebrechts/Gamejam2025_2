@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 130
-const JUMP_VELOCITY = -170
+const JUMP_VELOCITY = -50
 
 enum State{Idle,Chase}
 var state=State.Idle
@@ -13,12 +13,14 @@ var right_bounds
 @onready var rc_high: RayCast2D = $RayCast_High
 @onready var rc_ground: RayCast2D = $RayCast_Ground
 @onready var timer =$Timer
+@onready var stuckTimer =$Timer2
 
 @export var player:CharacterBody2D
 @export var ground:TileMapLayer
 
 var direction
 var grounded
+var jump
 
 func _ready():
 	left_bounds = self.position + Vector2(-125,0)
@@ -39,12 +41,14 @@ func _physics_process(delta: float) -> void:
 			
 		State.Chase:
 			$AnimatedSprite2D.play('Walking')
+			stuckTimer.start(0.1)
 			if(player.position.x-self.position.x>0):
 				direction = 1
 			else: 
 				direction =-1
 			if(grounded):
 				velocity.x=SPEED*direction
+			
 		
 func _look_for_player():
 	if rc_high.is_colliding() or rc_low.is_colliding():
@@ -53,6 +57,8 @@ func _look_for_player():
 		if (colliderH==player or colliderL==player):
 			state=State.Chase
 			timer.start(5)
+		if(colliderL==ground and not colliderH==ground):
+			jump=true
 	if state==State.Chase and (timer.time_left<=0):
 			state=State.Idle
 			print("here")
