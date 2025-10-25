@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://ciaqhw0fkf51t"]
+
+[ext_resource type="Texture2D" uid="uid://r8livwfwulum" path="res://free_assests/background/background 1/1.png" id="1_ahmgh"]
+[ext_resource type="Texture2D" uid="uid://cn2hhqm5hlqf4" path="res://free_assests/background/background 1/2.png" id="2_nsm5t"]
+[ext_resource type="Texture2D" uid="uid://k27phweu3gxe" path="res://free_assests/background/background 1/3.png" id="3_mxry3"]
+[ext_resource type="Texture2D" uid="uid://b7womixtmaaeu" path="res://free_assests/background/background 1/4.png" id="4_ui31t"]
+[ext_resource type="Texture2D" uid="uid://bdhkwnsd68dt2" path="res://free_assests/background/background 1/5.png" id="5_s57vi"]
+[ext_resource type="Texture2D" uid="uid://dnervg3iq3gn4" path="res://free_assests/background/background 1/6.png" id="6_5w3qu"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(576, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer"]
+texture_filter = 1
+offset_top = -324.0
+offset_right = 576.0
+texture = ExtResource("1_ahmgh")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(576, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer2"]
+texture_filter = 1
+offset_top = -324.0
+offset_right = 576.0
+texture = ExtResource("2_nsm5t")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.9, 0.9)
+motion_mirroring = Vector2(576, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer3"]
+texture_filter = 1
+offset_top = -324.0
+offset_right = 576.0
+texture = ExtResource("3_mxry3")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+position = Vector2(0.9, 0)
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(576, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer4"]
+texture_filter = 1
+offset_top = -324.0
+offset_right = 576.0
+texture = ExtResource("4_ui31t")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(576, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer5"]
+texture_filter = 1
+offset_top = -324.0
+offset_right = 576.0
+texture = ExtResource("5_s57vi")
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(576, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer6"]
+texture_filter = 1
+offset_top = -324.0
+offset_right = 576.0
+texture = ExtResource("6_5w3qu")
+stretch_mode = 1
