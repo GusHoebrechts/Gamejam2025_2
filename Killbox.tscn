@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://x8xlp656yn55"]
+
+[ext_resource type="Script" uid="uid://balg4g44s6wff" path="res://uncategorized/area_2d.gd" id="1_7n351"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7n351"]
+
+[node name="Killbox" type="Area2D" node_paths=PackedStringArray("teleport")]
+script = ExtResource("1_7n351")
+teleport = NodePath("")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 180)
+shape = SubResource("WorldBoundaryShape2D_7n351")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

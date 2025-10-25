@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=4 uid="uid://b2ijq384bfke6"]
+
+[ext_resource type="PackedScene" uid="uid://b1du422o05mag" path="res://Player.tscn" id="1_2au82"]
+[ext_resource type="PackedScene" uid="uid://x8xlp656yn55" path="res://Killbox.tscn" id="2_8tn2x"]
+[ext_resource type="PackedScene" uid="uid://c2min8mhx51ea" path="res://RespawnPoint.tscn" id="3_aq4fw"]
+[ext_resource type="PackedScene" uid="uid://clvcniggs3ocb" path="res://ground.tscn" id="4_8tn2x"]
+[ext_resource type="PackedScene" uid="uid://biyups2octm4n" path="res://Hazards.tscn" id="5_aq4fw"]
+[ext_resource type="PackedScene" uid="uid://cr7v1l3clgmko" path="res://Camera.tscn" id="6_ivycn"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." node_paths=PackedStringArray("teleport") instance=ExtResource("1_2au82")]
+position = Vector2(-1, -50)
+teleport = NodePath("../RespawnPoint")
+
+[node name="RespawnPoint" parent="." instance=ExtResource("3_aq4fw")]
+position = Vector2(0, -100)
+
+[node name="Killbox" parent="." node_paths=PackedStringArray("teleport") instance=ExtResource("2_8tn2x")]
+position = Vector2(0, -180)
+teleport = NodePath("../RespawnPoint")
+
+[node name="Ground" parent="." instance=ExtResource("4_8tn2x")]
+tile_map_data = PackedByteArray("AAD+//7/AwACAAAAAAD///7/AwACAAAAAAAAAP7/AwACAAAAAAABAP7/AwACAAAAAAACAP7/AwACAAAAAAADAP7/AwACAAAAAAAFAP3/AwACAAAAAAAHAPz/AwACAAAAAAAJAPv/AwACAAAAAAALAPr/AwACAAAAAAANAPn/AwACAAAAAAA=")
+
+[node name="Hazards" parent="." instance=ExtResource("5_aq4fw")]
+tile_map_data = PackedByteArray("AAAEAP//AgAAAAEAAAAIAP//AgAAAAEAAAANAP//AgAAAAEAAAA=")
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_ivycn")]
+limit_left = -166
+limit_top = -9999991
+limit_right = 534
+limit_bottom = 87
+player = NodePath("../Player")
