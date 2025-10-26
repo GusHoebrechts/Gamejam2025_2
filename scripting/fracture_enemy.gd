@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED = 110
 const JUMP_VELOCITY = -170
 
-enum State{Idle,Chase,Death}
+enum State{Idle,Chase,Death,Aggro_Chase}
 var state=State.Idle
 var check_dst = 10
 
@@ -29,12 +29,20 @@ var y
 var rng = RandomNumberGenerator.new()
 var my_random_number=0
 var 	dead =false
+var aggro =false
 
 func _ready() -> void:
 	$AnimatedSprite2D2.visible=false
 	x = rc_ground.position.x
 	y = rc_ground.position.y
 	my_random_number = rng.randf_range(0, 10.0)
+	self.add_to_group("Enemy")
+	if player == null:
+		player = get_tree().get_first_node_in_group("Player") as CharacterBody2D
+	if ground == null:
+		ground = get_tree().get_first_node_in_group("Ground")
+	if hazard == null:
+		hazard = get_tree().get_first_node_in_group("Hazard")
 	
 
 func _physics_process(delta: float) -> void:
@@ -60,7 +68,6 @@ func _physics_process(delta: float) -> void:
 			dx = abs(global_position.x - last_x)
 			if(player.position.x-self.position.x>0):
 				direction = 1
-				
 				_flip_rays()
 			else: 
 				direction =-1
@@ -75,7 +82,31 @@ func _physics_process(delta: float) -> void:
 					state=State.Idle
 		State.Death:
 			velocity=Vector2.ZERO
-		
+		State.Aggro_Chase:
+			print("aggro chase")
+			if(aggro):
+				timer.start(5)
+			$AnimatedSprite2D.play('Walking')
+			dx=abs(last_x-global_position.x)
+			if(stuckTimer.time_left<=0):
+				last_x=global_position.x
+				stuckTimer.start(0.75)
+			dx = abs(global_position.x - last_x)
+			if(player.position.x-self.position.x>0):
+				direction = 1
+				_flip_rays()
+			else: 
+				direction =-1
+				_flip_rays()
+			if(grounded):
+				velocity.x=SPEED*direction*1.1
+			if(dx<=0):
+				if(jump):
+					jump=false
+					velocity.y=JUMP_VELOCITY
+			if(timer.time_left<=0):
+				state=State.Idle
+			
 func _look_for_player():
 	if rc_high.is_colliding() or rc_low.is_colliding():
 		var colliderH = rc_high.get_collider()
@@ -124,3 +155,8 @@ func _death() -> void:
 	$AnimatedSprite2D2.play("default")
 	await $AnimatedSprite2D2.animation_finished
 	queue_free()
+func _player_ref(player_reference: CharacterBody2D):
+	player=player_reference
+func _aggro():
+	aggro=true
+	state=State.Aggro_Chase

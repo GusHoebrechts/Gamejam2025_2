@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bpu8w4jn7kyt7" path="res://free_assests/Free Pixel Effects Pack/12_nebula_spritesheet.png" id="3_1ohc2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_44cfe"]
-radius = 8.0
-height = 22.0
+radius = 12.0
+height = 24.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dd465"]
 atlas = ExtResource("2_qi2p4")
@@ -127,7 +127,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nhupr"]
-size = Vector2(15, 20)
+size = Vector2(24.25, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ggbst"]
 atlas = ExtResource("3_1ohc2")
@@ -568,7 +568,7 @@ animations = [{
 script = ExtResource("1_4gyqm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -16)
+position = Vector2(-5, -16)
 shape = SubResource("CapsuleShape2D_44cfe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -605,7 +605,7 @@ one_shot = true
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(-2, -16)
+position = Vector2(-5, -16)
 shape = SubResource("RectangleShape2D_nhupr")
 debug_color = Color(0.9767075, 0, 0.4134044, 0.41960785)
 

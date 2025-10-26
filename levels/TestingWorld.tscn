@@ -7,7 +7,6 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Ground" parent="." instance=ExtResource("1_8faaj")]
-tile_map_data = PackedByteArray(0, 0, 255, 255, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("2_kfbri")]
 
