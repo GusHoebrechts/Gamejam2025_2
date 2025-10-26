@@ -107,6 +107,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("Hazard")||body.is_in_group("Enemy")):
+		add_score(-100)
 		_reset()
 		lives= lives -1
 
@@ -123,3 +124,8 @@ func add_score(amount):
 func _set_jump(val:int):
 	JUMP_VELOCITY=val
 	
+
+
+func _on_timer_timeout() -> void:
+	add_score(-10)
+	pass # Replace with function body.

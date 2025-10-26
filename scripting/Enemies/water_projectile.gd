@@ -22,6 +22,7 @@ func _on_timer_timeout() -> void:
 
 func _on_waterprojectil_collision_body_entered(body: Node) -> void:
 	if(body.is_in_group("Player")):
+		body.add_score(-100)
 		body._reset()
 		self.queue_free()
 	elif (body.is_in_group("Floor")):
