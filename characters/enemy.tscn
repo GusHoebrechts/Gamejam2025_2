@@ -127,7 +127,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nhupr"]
-size = Vector2(24.25, 23.5)
+size = Vector2(24.25, 24.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ggbst"]
 atlas = ExtResource("3_1ohc2")
@@ -602,10 +602,11 @@ one_shot = true
 [node name="RestTimer" type="Timer" parent="."]
 
 [node name="Hitbox" type="Area2D" parent="." groups=["Enemy"]]
+position = Vector2(0, 1)
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(-5, -17.25)
+position = Vector2(-5, -17.75)
 shape = SubResource("RectangleShape2D_nhupr")
 debug_color = Color(0.9767075, 0, 0.4134044, 0.41960785)
 

@@ -109,9 +109,9 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("Hazard")||body.is_in_group("Enemy")):
 		add_score(-100)
 		_reset()
-		lives= lives -1
 
 func _reset():
+	lives= lives -1
 	global_position=teleport.global_position #
 	velocity=Vector2.ZERO
 	if(lives==0):

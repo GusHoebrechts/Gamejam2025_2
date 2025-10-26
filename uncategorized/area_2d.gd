@@ -8,5 +8,4 @@ func _on_body_entered(body: Node2D) -> void:
 			call_deferred("_respawn",body)
 		
 func _respawn(player: CharacterBody2D) -> void:
-	player.set_deferred("global_position", teleport.global_position)
-	player.set_deferred("velocity", Vector2.ZERO)
+	player._reset()

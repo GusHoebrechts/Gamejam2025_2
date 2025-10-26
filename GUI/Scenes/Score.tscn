@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtbbrq8ll2aps"]
+[gd_scene load_steps=2 format=3 uid="uid://cs76c88wh07cm"]
 
-[ext_resource type="Script" uid="uid://cfooc2b6rincq" path="res://canvas_layer.gd" id="1_sbsqa"]
+[ext_resource type="Script" path="res://canvas_layer.gd" id="1_sbsqa"]
 
 [node name="Score" type="CanvasLayer"]
 script = ExtResource("1_sbsqa")

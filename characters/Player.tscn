@@ -189,11 +189,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6ohk"]
-size = Vector2(8, 22)
+size = Vector2(8, 21)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oudfo"]
 radius = 5.0
-height = 20.0
+height = 22.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_3tkgg")
@@ -204,7 +204,7 @@ sprite_frames = SubResource("SpriteFrames_3tkgg")
 animation = &"Runninng"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
+position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_l6ohk")
 
 [node name="Hitbox" type="Area2D" parent="."]
