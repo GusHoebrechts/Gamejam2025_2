@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1q0agfsjrlvy"]
+
+[ext_resource type="Script" uid="uid://d11kk04ltrwkm" path="res://scripting/canvas_layer.gd" id="1_wcyfa"]
+[ext_resource type="FontFile" uid="uid://7h8vrero0kx4" path="res://free_assests/Font/8-bit Arcade In.ttf" id="2_rw2hi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8an32"]
+font = ExtResource("2_rw2hi")
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_wcyfa")
+
+[node name="Panel" type="Panel" parent="."]
+texture_filter = 1
+offset_top = -24.0
+offset_right = 100.0
+offset_bottom = 26.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 99.0
+offset_bottom = 49.0
+text = "Hello World"
+label_settings = SubResource("LabelSettings_8an32")
+autowrap_mode = 2
