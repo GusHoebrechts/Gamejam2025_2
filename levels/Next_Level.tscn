@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cbb3jo5f7iu2f"]
+[gd_scene load_steps=18 format=4 uid="uid://d03iai6fgsxey"]
 
 [ext_resource type="Script" uid="uid://baw7b7bh4k78p" path="res://levels/notes/next_level.gd" id="1_ck6te"]
 [ext_resource type="PackedScene" uid="uid://cm8jsnwi5bsy8" path="res://characters/Player.tscn" id="1_yp6kr"]
@@ -9,13 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://cr7v1l3clgmko" path="res://resource_nodes/Camera.tscn" id="6_saiyi"]
 [ext_resource type="PackedScene" uid="uid://x8xlp656yn55" path="res://resource_nodes/Killbox.tscn" id="7_ekkqs"]
 [ext_resource type="PackedScene" uid="uid://crmwllx118wgv" path="res://characters/enemy.tscn" id="8_vmser"]
-[ext_resource type="PackedScene" uid="uid://dhl13w7hlp2uq" path="res://resource_nodes/Gate_Mechanism.tscn" id="9_gqesa"]
-[ext_resource type="PackedScene" uid="uid://80j55l6x082t" path="res://resource_nodes/LaserWall.tscn" id="10_ana1g"]
-[ext_resource type="PackedScene" uid="uid://d0ynyxm1giq1c" path="res://resource_nodes/Sign.tscn" id="11_ana1g"]
+[ext_resource type="PackedScene" path="res://resource_nodes/Gate_Mechanism.tscn" id="9_gqesa"]
+[ext_resource type="PackedScene" path="res://resource_nodes/LaserWall.tscn" id="10_ana1g"]
+[ext_resource type="PackedScene" path="res://resource_nodes/Sign.tscn" id="11_ana1g"]
 [ext_resource type="PackedScene" uid="uid://dnhjlfe38j4wy" path="res://scripting/Enemies/gargoyle.tscn" id="12_saiyi"]
 [ext_resource type="PackedScene" uid="uid://c2mkpo4vnnwvr" path="res://resource_nodes/change_respawn.tscn" id="13_ekkqs"]
 [ext_resource type="PackedScene" uid="uid://cs76c88wh07cm" path="res://GUI/Scenes/Score.tscn" id="15_j2pev"]
-[ext_resource type="PackedScene" uid="uid://cxxeiqhu5w2vy" path="res://resource_nodes/Next.tscn" id="16_qo1rt"]
+[ext_resource type="PackedScene" path="res://resource_nodes/Next.tscn" id="16_qo1rt"]
+[ext_resource type="PackedScene" uid="uid://y7va44rqyi8v" path="res://GUI/Scenes/pause_menu.tscn" id="17_nibtt"]
 
 [node name="Next_Level" type="Node2D"]
 script = ExtResource("1_ck6te")
@@ -110,5 +111,7 @@ autostart = true
 [node name="Area2D" parent="." instance=ExtResource("16_qo1rt")]
 position = Vector2(206, -520)
 next_level = "res://levels/TestingWorld.tscn"
+
+[node name="Pausemenu" parent="." instance=ExtResource("17_nibtt")]
 
 [connection signal="timeout" from="Score/Timer" to="." method="_on_timer_timeout"]
