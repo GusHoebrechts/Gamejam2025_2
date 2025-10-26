@@ -17,6 +17,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_body_exited(body: Node2D) -> void:
 	if(body.is_in_group("Player")):
+		print("disconnect2")
 		if player.interact.is_connected(_on_player_interact):
 			player.interact.disconnect(_on_player_interact)
 
@@ -29,8 +30,6 @@ func _on_player_interact():
 		flipped=false
 		$AnimatedSprite2D.play("default")
 	
-func _on_player_disconnect():
-	pass
 func _spawn_entity():
 	if not spawn_scene: return
 	var new_instance = spawn_scene.instantiate()
