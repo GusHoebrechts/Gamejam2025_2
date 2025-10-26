@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://rxpqgnaiw1yd"]
+[gd_scene load_steps=12 format=4 uid="uid://rxpqgnaiw1yd"]
 
 [ext_resource type="PackedScene" uid="uid://cm8jsnwi5bsy8" path="res://characters/Player.tscn" id="1_kx6l7"]
 [ext_resource type="PackedScene" uid="uid://c1ccrm3ss1tjj" path="res://tilemaps/ground.tscn" id="2_jirdo"]
@@ -7,11 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://y7va44rqyi8v" path="res://GUI/Scenes/pause_menu.tscn" id="5_n46q3"]
 [ext_resource type="PackedScene" uid="uid://fcxo53xe4ymp" path="res://chest.tscn" id="6_btoec"]
 [ext_resource type="PackedScene" uid="uid://dtbbrq8ll2aps" path="res://GUI/Scenes/Score.tscn" id="7_gwceb"]
+[ext_resource type="PackedScene" path="res://resource_nodes/Next.tscn" id="8_l53as"]
+[ext_resource type="PackedScene" uid="uid://c2mkpo4vnnwvr" path="res://resource_nodes/change_respawn.tscn" id="9_3sk1a"]
+[ext_resource type="PackedScene" uid="uid://x8xlp656yn55" path="res://resource_nodes/Killbox.tscn" id="10_08mmt"]
+[ext_resource type="PackedScene" uid="uid://dt2fh7gxofqby" path="res://uncategorized/coin.tscn" id="11_5ot28"]
 
 [node name="Level1" type="Node2D"]
 
 [node name="Player" parent="." node_paths=PackedStringArray("teleport", "scorelabel") instance=ExtResource("1_kx6l7")]
-teleport = NodePath("..")
+teleport = NodePath("../Node2D")
 scorelabel = NodePath("../Score")
 
 [node name="Camera2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_bt44k")]
@@ -56,3 +60,43 @@ position = Vector2(1928, -171)
 
 [node name="Score" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_gwceb")]
 player = NodePath("../Player")
+
+[node name="Timer" type="Timer" parent="Score"]
+autostart = true
+
+[node name="Area2D" parent="." instance=ExtResource("8_l53as")]
+position = Vector2(-263, -9)
+next_level = "res://GUI/Scenes/level_select.tscn"
+
+[node name="ChangeRespawn" parent="." node_paths=PackedStringArray("respawn") instance=ExtResource("9_3sk1a")]
+position = Vector2(1920, -172)
+respawn = NodePath("../Node2D")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Killbox" parent="." node_paths=PackedStringArray("teleport") instance=ExtResource("10_08mmt")]
+position = Vector2(1469, 16)
+teleport = NodePath("../Node2D")
+
+[node name="Coin" parent="." instance=ExtResource("11_5ot28")]
+position = Vector2(1577, -475)
+
+[node name="Coin2" parent="." instance=ExtResource("11_5ot28")]
+position = Vector2(949, -140)
+
+[node name="Coin3" parent="." instance=ExtResource("11_5ot28")]
+position = Vector2(249, -62)
+
+[node name="Coin4" parent="." instance=ExtResource("11_5ot28")]
+position = Vector2(709, -416)
+
+[node name="Coin5" parent="." instance=ExtResource("11_5ot28")]
+position = Vector2(264, -538)
+
+[node name="Coin6" parent="." instance=ExtResource("11_5ot28")]
+position = Vector2(22, -380)
+
+[node name="Coin7" parent="." instance=ExtResource("11_5ot28")]
+position = Vector2(74, -314)
+
+[connection signal="timeout" from="Score/Timer" to="Player" method="_on_timer_timeout"]
