@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bs0g5fqpb0qbr"]
+[gd_scene load_steps=0 format=3 uid="uid://bs0g5fqpb0qbr"]
 
 [node name="EOL score screen" type="Control"]
 layout_mode = 3

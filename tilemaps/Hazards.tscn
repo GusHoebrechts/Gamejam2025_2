@@ -1,7 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://b40o8gpda0lsh"]
+[gd_scene load_steps=8 format=3 uid="uid://b40o8gpda0lsh"]
 
+[ext_resource type="Texture2D" uid="uid://b4kilnd7hi0i2" path="res://free_assests/alpha.png" id="1_xhs2f"]
 [ext_resource type="Texture2D" uid="uid://ydcivlwvxyxg" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/tile086.png" id="8_4dan4"]
 [ext_resource type="Texture2D" uid="uid://bduffd7nw0wk2" path="res://free_assests/tilemap/tilemap.png" id="9_ykbae"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e3jsu"]
+texture = ExtResource("1_xhs2f")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t3khm"]
 texture = ExtResource("8_4dan4")
@@ -202,6 +208,7 @@ physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 0
 sources/2 = SubResource("TileSetAtlasSource_t3khm")
 sources/3 = SubResource("TileSetAtlasSource_8y7a6")
+sources/17 = SubResource("TileSetAtlasSource_e3jsu")
 
 [node name="Hazards" type="TileMapLayer" groups=["Hazard"]]
 texture_filter = 1

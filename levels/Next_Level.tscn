@@ -21,7 +21,7 @@
 script = ExtResource("1_ck6te")
 
 [node name="Player" parent="." node_paths=PackedStringArray("teleport") instance=ExtResource("1_yp6kr")]
-position = Vector2(233, -354)
+position = Vector2(3, -67)
 teleport = NodePath("../RespawnPoint")
 
 [node name="Ground" parent="." groups=["Floor"] instance=ExtResource("2_vmser")]

@@ -8,6 +8,7 @@ extends CharacterBody2D
 const Coyote_Time = 0.1
 const Buffer_Time = 0.1
 const Snap_Len = 8
+var lives = 3
 
 var gargoyle = preload("res://scripting/Enemies/gargoyle.tscn")
 var reference = self
@@ -107,10 +108,13 @@ func _physics_process(delta: float) -> void:
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("Hazard")||body.is_in_group("Enemy")):
 		_reset()
+		lives= lives -1
 
 func _reset():
 	global_position=teleport.global_position #
 	velocity=Vector2.ZERO
+	if(lives==0):
+		get_tree().reload_current_scene()
 func get_score():
 	return score
 func add_score(amount):

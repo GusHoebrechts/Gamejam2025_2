@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://drdweutxkrbwl"]
+[gd_scene load_steps=18 format=4 uid="uid://drdweutxkrbwl"]
 
 [ext_resource type="Script" uid="uid://baw7b7bh4k78p" path="res://levels/notes/next_level.gd" id="1_majvs"]
 [ext_resource type="PackedScene" uid="uid://cm8jsnwi5bsy8" path="res://characters/Player.tscn" id="2_y03u4"]
@@ -16,26 +16,28 @@
 [ext_resource type="PackedScene" uid="uid://c2mkpo4vnnwvr" path="res://resource_nodes/change_respawn.tscn" id="14_brtku"]
 [ext_resource type="PackedScene" path="res://GUI/Scenes/Score.tscn" id="15_n6f41"]
 [ext_resource type="PackedScene" uid="uid://cxxeiqhu5w2vy" path="res://resource_nodes/Next.tscn" id="16_fwrml"]
+[ext_resource type="PackedScene" path="res://chest.tscn" id="16_majvs"]
 
 [node name="Next_Level_2" type="Node2D"]
 script = ExtResource("1_majvs")
 
-[node name="Player" parent="." node_paths=PackedStringArray("teleport") instance=ExtResource("2_y03u4")]
-position = Vector2(233, -354)
+[node name="Player" parent="." node_paths=PackedStringArray("teleport", "scorelabel") instance=ExtResource("2_y03u4")]
+position = Vector2(-8, -71)
 teleport = NodePath("../RespawnPoint")
+scorelabel = NodePath("../Score")
 
 [node name="Ground" parent="." groups=["Floor"] instance=ExtResource("3_gyhnd")]
 position = Vector2(-3, -33)
-tile_map_data = PackedByteArray("AAD/////AwABAAAAAAAAAP//AwACAAAAAAABAP//AwADAAAAAAAGAP7/AwABAAAAAAAHAP7/AwADAAAAAAALAPz/AwAAAAAAAAAOAPv/AwAAAAAAAAANAOz/AwAMAAUAAAALAN7/FAAAAAAAAAAMAN7/FAAAAAAAAAAMAN//FAAAAAAAAAANAN//FAAAAAAAAAAOAN//FAAAAAAAAAAPAN//FAAAAAAAAAAQAN//FAAAAAAAAAARAN//FAAAAAAAAAASAN//FAAAAAAAAAASAN7/FAAAAAAAAAATAN7/FAAAAAAAAAAUAN7/FAAAAAAAAAAVAN7/FAAAAAAAAAAWAN7/FAAAAAAAAAAaAO//FAAAAAAAAAAOANz/FAAAAAAAAAAPANz/FAAAAAAAAAAPAN3/FAAAAAAAAAAOAN3/FAAAAAAAAAAOAN7/FAAAAAAAAAAPAN7/FAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAALAN7/FAAAAAAAAAAMAN7/FAAAAAAAAAAMAN//FAAAAAAAAAANAN//FAAAAAAAAAAOAN//FAAAAAAAAAAPAN//FAAAAAAAAAAQAN//FAAAAAAAAAARAN//FAAAAAAAAAASAN//FAAAAAAAAAASAN7/FAAAAAAAAAATAN7/FAAAAAAAAAAUAN7/FAAAAAAAAAAVAN7/FAAAAAAAAAAWAN7/FAAAAAAAAAAaAO//FAAAAAAAAAAOANz/FAAAAAAAAAAPANz/FAAAAAAAAAAPAN3/FAAAAAAAAAAOAN3/FAAAAAAAAAAOAN7/FAAAAAAAAAAPAN7/FAAAAAAAAAAAAP//AwAAAAAAAAACAPb/FAAAAAAAAAACAPX/FAAAAAAAAAAFAPX/FAAAAAAAAAAFAPb/FAAAAAAAAAACAPf/FAAAAAAAAAAFAPf/FAAAAAAAAAD+////AwAAAAAAAAD/////AwAAAAAAAAD6//7/AwAAAAAAAAD5//7/AwAAAAAAAAD4//7/AwAAAAAAAADy//7/AwAAAAAAAADx//7/AwAAAAAAAADw//7/AwAAAAAAAAACAAEAAwAAAAAAAAADAAEAAwAAAAAAAAAEAAEAAwAAAAAAAAAEAAAAAwAIAAQAAAANAPj/FAAAAAAAAAANAPf/FAAAAAAAAAANAPb/FAAAAAAAAAAQAPb/FAAAAAAAAAAQAPf/FAAAAAAAAAAQAPj/FAAAAAAAAAAVAPj/FAAAAAAAAAAVAPf/FAAAAAAAAAAVAPb/FAAAAAAAAAAYAPb/FAAAAAAAAAAYAPf/FAAAAAAAAAAYAPj/FAAAAAAAAAAdAPj/FAAAAAAAAAAFAAEAAwAAAAAAAAAGAAEAAwAAAAAAAAAHAAEAFAAAAAAAAAAGAPz/FAAAAAAAAAAGAPv/FAAAAAAAAAAGAPr/FAAAAAAAAAAZAAAAAwABAAAAAAAMAAQAFAAAAAAAAAAIAAEAFAAAAAAAAAAaAAAAAwACAAAAAAAbAAAAAwACAAAAAAAdAAAAAwADAAAAAAAgAPf/FAAAAAAAAAAgAPj/FAAAAAAAAAAmAPf/FAAAAAAAAAAmAPj/FAAAAAAAAAAcAAAAAwACAAAAAADp//3/AwAAAAAAAADo//3/AwAAAAAAAADn//3/AwAAAAAAAADm//3/AwAAAAAAAADm//z/AwAAAAAAAADm//v/AwAAAAAAAADm//r/AwAAAAAAAADn//r/AwAAAAAAAADo//r/AwAAAAAAAADp//r/AwAAAAAAAADl//r/AwAAAAAAAADk//r/AwAAAAAAAADj//r/AwAAAAAAAADi//r/AwAAAAAAAADh//r/AwAAAAAAAADg//r/AwAAAAAAAADf//r/AwAAAAAAAADq//r/AwAAAAAAAADq//b/AwAAAAAAAADp//b/AwAAAAAAAADo//b/AwAAAAAAAADn//b/AwAAAAAAAADm//b/AwAAAAAAAADl//b/AwAAAAAAAADk//b/AwAAAAAAAADe//r/AwAAAAAAAADe//L/AwAAAAAAAADe//H/AwAAAAAAAAD5//H/AwAAAAAAAAD5//L/AwAAAAAAAAD5//P/AwAAAAAAAAD5//T/AwAAAAAAAAD5//X/AwAAAAAAAADw//b/AwAAAAAAAADv//b/AwAAAAAAAADu//b/AwAAAAAAAADt//b/AwAAAAAAAADs//b/AwAAAAAAAADr//b/AwAAAAAAAAD5//b/AwAAAAAAAAD4//b/AwAAAAAAAAD1//b/AwAAAAAAAAD0//b/AwAAAAAAAAD0//P/AwAAAAAAAADz//P/AwAAAAAAAADy//P/AwAAAAAAAADx//P/AwAAAAAAAADw//P/AwAAAAAAAADv//P/AwAAAAAAAADu//P/AwAAAAAAAADw//X/AwAAAAAAAADw//T/AwAAAAAAAAD3//7/AwAAAAAAAADs/wAAAwAAAAAAAADr/wAAAwAAAAAAAADq/wAAAwAAAAAAAADl/wAAAwAAAAAAAADk/wAAAwAAAAAAAADj/wAAAwAAAAAAAADm//n/AwAAAAAAAADm//j/AwAAAAAAAADm//f/AwAAAAAAAADr//r/AwAAAAAAAADs//r/AwAAAAAAAADt//r/AwAAAAAAAADu//r/AwAAAAAAAADv//r/AwAAAAAAAADw//r/AwAAAAAAAADx//r/AwAAAAAAAADy//r/AwAAAAAAAADz//r/AwAAAAAAAAD0//r/AwAAAAAAAAD1//r/AwAAAAAAAADt//P/AwAAAAAAAADs//P/AwAAAAAAAADe//D/AwAAAAAAAADe/+//AwAAAAAAAADe/+7/AwAAAAAAAADf/+7/AwAAAAAAAADg/+7/AwAAAAAA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AADF//H/AwAAAAAAAADG/+//AwAAAAAAAADH/+3/AwAAAAAAAADH/+7/AwAAAAAAAADH/+//AwAAAAAAAADH//D/AwAAAAAAAADH//H/AwAAAAAAAADH//L/AwAAAAAAAADH//P/AwAAAAAAAADH//T/AwAAAAAAAADH//X/AwAAAAAAAADH//b/AwAAAAAAAADH//f/AwAAAAAAAADH//j/AwAAAAAAAADH//n/AwAAAAAAAADZ//j/AwAAAAAAAADZ//n/AwAAAAAAAADa//j/AwAAAAAAAADX//T/AwAAAAAAAADY//T/AwAAAAAAAADZ//T/AwAAAAAAAADd/+7/AwAAAAAAAADc/+7/AwAAAAAAAADb/+7/AwAAAAAAAADa/+7/AwAAAAAAAADZ/+7/AwAAAAAAAADm/wAAAwAAAAAAAADU//f/AwAAAAAAAADI/+3/AwAAAAAAAADJ/+3/AwAAAAAAAADM//n/AwAAAAAAAADN//n/AwAAAAAAAADN//j/AwAAAAAAAADR//n/AwAAAAAAAADn//X/AwAAAAAAAADv//L/AwAAAAAAAADw//L/AwAAAAAAAADu/+3/AwAAAAAAAADt/+3/AwAAAAAAAADI/+z/AwAMAAUAAAA=")
 
 [node name="Hazards" parent="." instance=ExtResource("4_hdb74")]
 position = Vector2(0, -34)
-tile_map_data = PackedByteArray("AAAmAP7/AwANAAEAAAAnAP7/AwANAAEAAAAoAP7/AwANAAEAAAApAP7/AwANAAEAAAAmAP//AwANAAMAAAAnAP//AwANAAMAAAAoAP//AwANAAMAAAApAP//AwANAAMAAAApAAAAAwANAAMAAAAoAAAAAwANAAMAAAAnAAAAAwANAAMAAAAmAAAAAwANAAMAAAA=")
+tile_map_data = PackedByteArray("AADJ//n/AgAAAAEAAADP//n/AgAAAAEAAAA=")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_wfbxv")]
 
 [node name="RespawnPoint" parent="." instance=ExtResource("6_aqpp8")]
-position = Vector2(11, -79)
+position = Vector2(-7, -67)
 
 [node name="Camera2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_luu2m")]
 zoom = Vector2(7, 7)
@@ -47,50 +49,97 @@ player = NodePath("../Player")
 position = Vector2(1, -121)
 teleport = NodePath("../RespawnPoint")
 
-[node name="CharacterBody2D" parent="." node_paths=PackedStringArray("player", "ground", "hazard") instance=ExtResource("9_278iv")]
-position = Vector2(333, -31)
-player = NodePath("../Player")
-ground = NodePath("../Ground")
-hazard = NodePath("../Hazards")
-
-[node name="InteractSwitch2" parent="." instance=ExtResource("10_k0fo4")]
-position = Vector2(1171, -11)
-
-[node name="LaserWall" parent="InteractSwitch2" instance=ExtResource("11_468c8")]
-position = Vector2(-44, -197)
-
-[node name="CharacterBody2D2" parent="." node_paths=PackedStringArray("player", "ground", "hazard") instance=ExtResource("9_278iv")]
-position = Vector2(1186, -12)
-player = NodePath("../Player")
-ground = NodePath("../Ground")
-hazard = NodePath("../Hazards")
-
-[node name="Node2D" parent="." instance=ExtResource("12_i47d7")]
-position = Vector2(294, -57)
-
-[node name="InteractSwitch3" parent="." instance=ExtResource("10_k0fo4")]
-position = Vector2(1187, -58)
-
-[node name="LaserWall" parent="InteractSwitch3" instance=ExtResource("11_468c8")]
-position = Vector2(-60, 25)
-
-[node name="InteractSwitch4" parent="." instance=ExtResource("10_k0fo4")]
-position = Vector2(932, -60)
-
-[node name="LaserWall" parent="InteractSwitch4" instance=ExtResource("11_468c8")]
-position = Vector2(2, 27)
-
 [node name="Gargoyle" parent="." node_paths=PackedStringArray("player") instance=ExtResource("13_dsdao")]
-position = Vector2(448, -296)
+position = Vector2(59, -187)
 player = NodePath("../Player")
-
-[node name="ChangeRespawn" parent="." node_paths=PackedStringArray("respawn") instance=ExtResource("14_brtku")]
-position = Vector2(210, -346)
-respawn = NodePath("../RespawnPoint")
 
 [node name="Score" parent="." node_paths=PackedStringArray("player") instance=ExtResource("15_n6f41")]
 player = NodePath("../Player")
 
 [node name="Area2D" parent="." instance=ExtResource("16_fwrml")]
-position = Vector2(76, -121)
+position = Vector2(695, -71)
 next_level = "res://levels/TestingWorld.tscn"
+
+[node name="Gargoyle2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("13_dsdao")]
+position = Vector2(575, -161)
+player = NodePath("../Player")
+
+[node name="Gargoyle3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("13_dsdao")]
+position = Vector2(545, -164)
+player = NodePath("../Player")
+
+[node name="Gargoyle4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("13_dsdao")]
+position = Vector2(364, -169)
+player = NodePath("../Player")
+
+[node name="Gargoyle5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("13_dsdao")]
+position = Vector2(238, -169)
+player = NodePath("../Player")
+
+[node name="Gargoyle6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("13_dsdao")]
+position = Vector2(-387, -96)
+player = NodePath("../Player")
+
+[node name="Gargoyle7" parent="." node_paths=PackedStringArray("player") instance=ExtResource("13_dsdao")]
+position = Vector2(493, -45)
+player = NodePath("../Player")
+
+[node name="InteractSwitch2" parent="." instance=ExtResource("10_k0fo4")]
+position = Vector2(-380, -123)
+
+[node name="LaserWall" parent="InteractSwitch2" instance=ExtResource("11_468c8")]
+position = Vector2(18, 25)
+
+[node name="Gargoyle8" parent="." node_paths=PackedStringArray("player") instance=ExtResource("13_dsdao")]
+position = Vector2(-273, -209)
+player = NodePath("../Player")
+
+[node name="Enemy" parent="." node_paths=PackedStringArray("player", "ground", "hazard") instance=ExtResource("9_278iv")]
+position = Vector2(-350, -187)
+player = NodePath("../Player")
+ground = NodePath("../Ground")
+hazard = NodePath("../Hazards")
+
+[node name="Enemy2" parent="." node_paths=PackedStringArray("player", "ground", "hazard") instance=ExtResource("9_278iv")]
+position = Vector2(-207, -236)
+player = NodePath("../Player")
+ground = NodePath("../Ground")
+hazard = NodePath("../Hazards")
+
+[node name="Sign" parent="." instance=ExtResource("12_i47d7")]
+position = Vector2(-653, -136)
+message = "Waarom besta ik"
+
+[node name="Chest" parent="." instance=ExtResource("16_majvs")]
+position = Vector2(-506, -329)
+
+[node name="Chest2" parent="." instance=ExtResource("16_majvs")]
+position = Vector2(-469, -329)
+
+[node name="Chest3" parent="." instance=ExtResource("16_majvs")]
+position = Vector2(-347, -329)
+
+[node name="Chest4" parent="." instance=ExtResource("16_majvs")]
+position = Vector2(-488, -343)
+
+[node name="Chest5" parent="." instance=ExtResource("16_majvs")]
+position = Vector2(-488, -329)
+
+[node name="Enemy3" parent="." node_paths=PackedStringArray("player", "ground", "hazard") instance=ExtResource("9_278iv")]
+position = Vector2(-393, -320)
+player = NodePath("../Player")
+ground = NodePath("../Ground")
+hazard = NodePath("../Hazards")
+
+[node name="Enemy4" parent="." node_paths=PackedStringArray("player", "ground", "hazard") instance=ExtResource("9_278iv")]
+position = Vector2(-431, -319)
+player = NodePath("../Player")
+ground = NodePath("../Ground")
+hazard = NodePath("../Hazards")
+
+[node name="Gargoyle9" parent="." node_paths=PackedStringArray("player") instance=ExtResource("13_dsdao")]
+position = Vector2(-484, -33)
+player = NodePath("../Player")
+
+[node name="ChangeRespawn" parent="." instance=ExtResource("14_brtku")]
+position = Vector2(-895, -345)
