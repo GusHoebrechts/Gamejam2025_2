@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
 @export var teleport:Node2D
+@export var scorelabel:CanvasLayer
 const SPEED = 145.0
 
-const JUMP_VELOCITY = -300
+
+const JUMP_VELOCITY = -320
 const Coyote_Time = 0.1
 const Buffer_Time = 0.1
 const Snap_Len = 8
@@ -11,6 +13,7 @@ const Snap_Len = 8
 var gargoyle = preload("res://scripting/Enemies/gargoyle.tscn")
 var reference = self
 var gargoyle_spawned = false
+var score = 0
 
 
 enum State{Idle,Running,Walking,Jumping, Falling}
@@ -109,3 +112,9 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 func _reset():
 	global_position=teleport.global_position #
 	velocity=Vector2.ZERO
+func get_score():
+	return score
+func add_score(amount):
+	score += amount
+	scorelabel.update_score()
+	

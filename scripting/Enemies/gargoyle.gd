@@ -5,7 +5,7 @@ var projectile = preload("res://scripting/Enemies/water_projectile.tscn")
 
 @onready var himself = get_node("CharacterBody2D")
 @export var player:CharacterBody2D
-var SPEED = 50
+var SPEED = 100
 var direction = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,9 +21,9 @@ func _physics_process(delta: float) -> void:
 	
 
 func move(player):
-	if(player.global_position.x-himself.global_position.x>10):
+	if((player.global_position.x-himself.global_position.x)>10 and (player.global_position.x-himself.global_position.x)<200):
 		direction = 1
-	elif(player.global_position.x-himself.global_position.x<-10): 
+	elif(player.global_position.x-himself.global_position.x<-10 and (player.global_position.x-himself.global_position.x)>-200): 
 		direction =-1
 	else:
 		direction = 0

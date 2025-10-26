@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c1ccrm3ss1tjj"]
+[gd_scene load_steps=42 format=3 uid="uid://c1ccrm3ss1tjj"]
 
 [ext_resource type="Texture2D" uid="uid://d2q28c5dsbxlf" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/Pillar End.png" id="1_3nkoi"]
 [ext_resource type="Texture2D" uid="uid://bxtam566w8d2v" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/Museum Floor.png" id="1_hgffc"]
@@ -6,8 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://bmbyg85a8qhcc" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/Pillar shaft.png" id="2_eshh7"]
 [ext_resource type="Texture2D" uid="uid://eyau5hwjg3ox" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/Floor Outside (1).png" id="3_2cabu"]
 [ext_resource type="Texture2D" uid="uid://b13jlumocfofw" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/Platform.png" id="3_6vedu"]
+[ext_resource type="Texture2D" uid="uid://bru0hmjfasl2e" path="res://levels/Tiles/Pillar shaft broken.png" id="3_26u7d"]
 [ext_resource type="Texture2D" uid="uid://dhjgoc5a4rir0" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/Outside Floore.png" id="4_7k2hg"]
+[ext_resource type="Texture2D" uid="uid://qp7lv3sd1acy" path="res://levels/Tiles/Museum underground.png" id="4_wucd7"]
 [ext_resource type="Texture2D" uid="uid://dyaqxd5177gn8" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/Floor Outside.png" id="5_6vedu"]
+[ext_resource type="Texture2D" uid="uid://bcecpng6gcwbb" path="res://levels/Tiles/MuseumUnderground2.png" id="5_kjl67"]
+[ext_resource type="Texture2D" uid="uid://caenok74b1kln" path="res://levels/Tiles/MuseumUnderground3.png" id="6_yh6h2"]
+[ext_resource type="Texture2D" uid="uid://xdj7hjcfh1qi" path="res://levels/Tiles/MuseumUnderground4.png" id="7_kjl67"]
+[ext_resource type="Texture2D" uid="uid://cq77sqleqbdt" path="res://levels/Tiles/Pedestal.png" id="8_yh6h2"]
+[ext_resource type="Texture2D" uid="uid://b1iamkmuiiv8y" path="res://GUI/assets/uncategorized/Roof outside.png" id="9_eshh7"]
+[ext_resource type="Texture2D" uid="uid://danugjusyrw24" path="res://levels/Tiles/Chest.png" id="9_lecvj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26u7d"]
 texture = ExtResource("1_3nkoi")
@@ -17,6 +25,96 @@ texture = ExtResource("1_3nkoi")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_40lbk"]
 texture = ExtResource("2_eshh7")
 0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yh6h2"]
+texture = ExtResource("3_26u7d")
+0:0/0 = 0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lecvj"]
+load_path = "res://.godot/imported/Museum underground.png-77c62875268b6202024a3e21b20a9987.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5eoex"]
+texture = SubResource("CompressedTexture2D_lecvj")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1vvhc"]
+load_path = "res://.godot/imported/Museum underground (1).png-5dfc21d70e9df91596451430cdc26462.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r6xye"]
+texture = SubResource("CompressedTexture2D_1vvhc")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y2ol1"]
+load_path = "res://.godot/imported/Museum underground.png-77c62875268b6202024a3e21b20a9987.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a2nwg"]
+texture = SubResource("CompressedTexture2D_y2ol1")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a2qsn"]
+texture = ExtResource("4_wucd7")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rw5lo"]
+texture = ExtResource("5_kjl67")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dq8ii"]
+texture = ExtResource("6_yh6h2")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lecvj"]
+texture = ExtResource("7_kjl67")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1vvhc"]
+texture = ExtResource("8_yh6h2")
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y2ol1"]
+texture = ExtResource("9_lecvj")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.7770329, 8, -3.956891, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wucd7"]
 texture = ExtResource("3_2cabu")
@@ -278,6 +376,27 @@ texture = ExtResource("5_6vedu")
 2:0/0 = 0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eshh7"]
+load_path = "res://.godot/imported/Roof outside.png-e5126899688a5075f64d98706f019a7c.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2cabu"]
+texture = SubResource("CompressedTexture2D_eshh7")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kjl67"]
+texture = ExtResource("9_eshh7")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
 [sub_resource type="TileSet" id="TileSet_tv015"]
 physics_layer_0/collision_layer = 1
 sources/3 = SubResource("TileSetAtlasSource_t7tip")
@@ -288,6 +407,18 @@ sources/7 = SubResource("TileSetAtlasSource_3nkoi")
 sources/0 = SubResource("TileSetAtlasSource_26u7d")
 sources/1 = SubResource("TileSetAtlasSource_40lbk")
 sources/2 = SubResource("TileSetAtlasSource_wucd7")
+sources/8 = SubResource("TileSetAtlasSource_2cabu")
+sources/9 = SubResource("TileSetAtlasSource_kjl67")
+sources/10 = SubResource("TileSetAtlasSource_yh6h2")
+sources/11 = SubResource("TileSetAtlasSource_5eoex")
+sources/12 = SubResource("TileSetAtlasSource_r6xye")
+sources/13 = SubResource("TileSetAtlasSource_a2nwg")
+sources/14 = SubResource("TileSetAtlasSource_a2qsn")
+sources/15 = SubResource("TileSetAtlasSource_rw5lo")
+sources/16 = SubResource("TileSetAtlasSource_dq8ii")
+sources/17 = SubResource("TileSetAtlasSource_lecvj")
+sources/18 = SubResource("TileSetAtlasSource_1vvhc")
+sources/19 = SubResource("TileSetAtlasSource_y2ol1")
 
 [node name="Ground" type="TileMapLayer"]
 texture_filter = 1

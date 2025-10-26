@@ -1,5 +1,6 @@
-extends TextureButton
+extends Node2D
 
+var first = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,6 +10,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
-func _pressed() -> void:
-		get_tree().change_scene_to_file("res://levels/level_1.tscn")
+
+
+
+
+
+func _on_interact_sphere_body_entered(body: Node2D) -> void:
+	if(body.is_in_group("Player") and first):
+		body.add_score(1000)
+		self.hide()
+		first = false
+	pass # Replace with function body.

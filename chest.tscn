@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://fcxo53xe4ymp"]
+
+[ext_resource type="PackedScene" path="res://resource_nodes/Interactive.tscn" id="1_8uwsg"]
+[ext_resource type="Script" uid="uid://d1d34apc4u60s" path="res://chest.gd" id="1_bp1or"]
+[ext_resource type="Texture2D" uid="uid://danugjusyrw24" path="res://levels/Tiles/Chest.png" id="2_bp1or"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_trlyu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bp1or")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Chest" type="Node2D"]
+script = ExtResource("1_bp1or")
+metadata/_edit_group_ = true
+
+[node name="InteractSphere" parent="." instance=ExtResource("1_8uwsg")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_trlyu")
+
+[connection signal="body_entered" from="InteractSphere" to="." method="_on_interact_sphere_body_entered"]
