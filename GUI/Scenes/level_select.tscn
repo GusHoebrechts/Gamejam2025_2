@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckjb2m2bvgaxf"]
+
+[ext_resource type="Script" uid="uid://djb6efui43etq" path="res://GUI/Scenes/level_select.gd" id="1_jpc55"]
+[ext_resource type="Texture2D" uid="uid://jma2323mjfw4" path="res://GUI/assets/Level1Unselected.png" id="2_1lw3w"]
+[ext_resource type="Texture2D" uid="uid://cfh188jird8nq" path="res://GUI/assets/Level1Selected.png" id="3_jo6yv"]
+[ext_resource type="Texture2D" uid="uid://07xy00e767bj" path="res://GUI/assets/Level2Unselected.png" id="4_tmcvy"]
+[ext_resource type="Texture2D" uid="uid://y7a0btdccfl4" path="res://GUI/assets/Level2Selected.png" id="5_kc8go"]
+
+[node name="Level Select" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jpc55")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_constants/margin_left = 250
+theme_override_constants/margin_top = 500
+theme_override_constants/margin_right = 250
+theme_override_constants/margin_bottom = 500
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 500
+alignment = 1
+
+[node name="Level1Bttn" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+action_mode = 0
+texture_normal = ExtResource("2_1lw3w")
+texture_pressed = ExtResource("3_jo6yv")
+texture_hover = ExtResource("3_jo6yv")
+stretch_mode = 3
+
+[node name="Level2Bttn" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+action_mode = 0
+texture_normal = ExtResource("4_tmcvy")
+texture_pressed = ExtResource("5_kc8go")
+texture_hover = ExtResource("5_kc8go")
+stretch_mode = 3
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Level1Bttn" to="." method="_on_level_1_bttn_pressed"]
