@@ -2,24 +2,24 @@
 
 [ext_resource type="PackedScene" uid="uid://cm8jsnwi5bsy8" path="res://characters/Player.tscn" id="1_4ykhg"]
 [ext_resource type="Script" uid="uid://hrotef21hojb" path="res://levels/notes/tutorial.gd" id="1_i8flm"]
-[ext_resource type="PackedScene" uid="uid://d1q0agfsjrlvy" path="res://resource_nodes/TextBox2.tscn" id="2_arifd"]
+[ext_resource type="PackedScene" path="res://resource_nodes/TextBox2.tscn" id="2_arifd"]
 [ext_resource type="PackedScene" uid="uid://dyyiodgopnanx" path="res://resource_nodes/RespawnPoint.tscn" id="2_nen2m"]
 [ext_resource type="PackedScene" uid="uid://ciaqhw0fkf51t" path="res://resource_nodes/Background.tscn" id="3_arifd"]
-[ext_resource type="Script" uid="uid://dj0e3rt12bp0f" path="res://scripting/display_text.gd" id="3_vf4bn"]
+[ext_resource type="Script" path="res://scripting/display_text.gd" id="3_vf4bn"]
 [ext_resource type="PackedScene" uid="uid://x8xlp656yn55" path="res://resource_nodes/Killbox.tscn" id="4_vf4bn"]
 [ext_resource type="PackedScene" uid="uid://cr7v1l3clgmko" path="res://resource_nodes/Camera.tscn" id="5_ua4tl"]
 [ext_resource type="PackedScene" uid="uid://b40o8gpda0lsh" path="res://tilemaps/Hazards.tscn" id="6_m26r5"]
 [ext_resource type="PackedScene" uid="uid://c1ccrm3ss1tjj" path="res://tilemaps/ground.tscn" id="7_lsfqn"]
 [ext_resource type="PackedScene" uid="uid://c2mkpo4vnnwvr" path="res://resource_nodes/change_respawn.tscn" id="8_vfxcc"]
 [ext_resource type="PackedScene" uid="uid://crmwllx118wgv" path="res://characters/enemy.tscn" id="9_0m4h1"]
-[ext_resource type="PackedScene" uid="uid://b56yepq5vx5ec" path="res://resource_nodes/interact_sphere.tscn" id="10_nen2m"]
+[ext_resource type="PackedScene" path="res://resource_nodes/interact_sphere.tscn" id="10_nen2m"]
 [ext_resource type="Texture2D" uid="uid://bduffd7nw0wk2" path="res://free_assests/tilemap/tilemap.png" id="14_lsfqn"]
-[ext_resource type="PackedScene" uid="uid://bb1tg3n64s42p" path="res://resource_nodes/interact_switch.tscn" id="14_vfxcc"]
-[ext_resource type="PackedScene" uid="uid://dhl13w7hlp2uq" path="res://resource_nodes/Gate_Mechanism.tscn" id="15_lsfqn"]
-[ext_resource type="PackedScene" uid="uid://80j55l6x082t" path="res://resource_nodes/LaserWall.tscn" id="16_0m4h1"]
-[ext_resource type="PackedScene" uid="uid://cxxeiqhu5w2vy" path="res://resource_nodes/Next.tscn" id="18_i8flm"]
+[ext_resource type="PackedScene" path="res://resource_nodes/interact_switch.tscn" id="14_vfxcc"]
+[ext_resource type="PackedScene" path="res://resource_nodes/Gate_Mechanism.tscn" id="15_lsfqn"]
+[ext_resource type="PackedScene" path="res://resource_nodes/LaserWall.tscn" id="16_0m4h1"]
+[ext_resource type="PackedScene" path="res://resource_nodes/Next.tscn" id="18_i8flm"]
 [ext_resource type="PackedScene" uid="uid://cs76c88wh07cm" path="res://GUI/Scenes/Score.tscn" id="19_mruvo"]
-[ext_resource type="PackedScene" path="res://chest.tscn" id="20_r5y4b"]
+[ext_resource type="PackedScene" uid="uid://fcxo53xe4ymp" path="res://chest.tscn" id="20_r5y4b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vfxcc"]
 atlas = ExtResource("14_lsfqn")
@@ -117,7 +117,7 @@ position = Vector2(34, -21)
 
 [node name="Area2D" parent="." instance=ExtResource("18_i8flm")]
 position = Vector2(1282, -96)
-next_level = "res://levels/Next_Level.tscn"
+next_level = "res://GUI/Scenes/main_menu.tscn"
 
 [node name="Score" parent="." node_paths=PackedStringArray("player") instance=ExtResource("19_mruvo")]
 player = NodePath("../Player")

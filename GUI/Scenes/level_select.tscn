@@ -46,3 +46,4 @@ texture_hover = ExtResource("5_kc8go")
 stretch_mode = 3
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Level1Bttn" to="." method="_on_level_1_bttn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Level2Bttn" to="." method="_on_level_2_bttn_pressed"]
