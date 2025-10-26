@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bb1tg3n64s42p" path="res://resource_nodes/interact_switch.tscn" id="14_vfxcc"]
 [ext_resource type="PackedScene" uid="uid://dhl13w7hlp2uq" path="res://resource_nodes/Gate_Mechanism.tscn" id="15_lsfqn"]
 [ext_resource type="PackedScene" uid="uid://80j55l6x082t" path="res://resource_nodes/LaserWall.tscn" id="16_0m4h1"]
-[ext_resource type="PackedScene" uid="uid://dhq7trqebhyjl" path="res://resource_nodes/Next_Level.tscn" id="16_vfxcc"]
+[ext_resource type="PackedScene" uid="uid://cxxeiqhu5w2vy" path="res://resource_nodes/Next.tscn" id="18_i8flm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vfxcc"]
 atlas = ExtResource("14_lsfqn")
@@ -46,7 +46,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D" type="Node2D"]
+[node name="Tutorial" type="Node2D"]
 script = ExtResource("1_i8flm")
 
 [node name="Player" parent="." node_paths=PackedStringArray("teleport") instance=ExtResource("1_4ykhg")]
@@ -113,8 +113,9 @@ collision_mask = 15
 [node name="LaserWall" parent="InteractSwitch2" instance=ExtResource("16_0m4h1")]
 position = Vector2(34, -21)
 
-[node name="Node2D2" parent="." instance=ExtResource("16_vfxcc")]
-position = Vector2(1274, -104)
+[node name="Area2D" parent="." instance=ExtResource("18_i8flm")]
+position = Vector2(1282, -96)
+next_level = "res://levels/Next_Level.tscn"
 
 [connection signal="body_entered" from="InteractSwitch" to="InteractSwitch" method="_on_body_entered"]
 [connection signal="body_exited" from="InteractSwitch" to="InteractSwitch" method="_on_body_exited"]

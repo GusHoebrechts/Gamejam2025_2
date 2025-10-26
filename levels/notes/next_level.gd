@@ -1,5 +1,5 @@
 extends Node2D
-#145 movespeed
-#230 jumpheight
+var next_level
+
 func _ready() -> void:
 	$Player.call("_set_jump", -230)

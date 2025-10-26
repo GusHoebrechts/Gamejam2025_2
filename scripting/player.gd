@@ -2,10 +2,9 @@ extends CharacterBody2D
 
 @export var teleport:Node2D
 @export var scorelabel:CanvasLayer
-const SPEED = 145.0
+@export var SPEED = 145.0
+@export var JUMP_VELOCITY = -320
 
-
-const JUMP_VELOCITY = -320
 const Coyote_Time = 0.1
 const Buffer_Time = 0.1
 const Snap_Len = 8
@@ -117,4 +116,6 @@ func get_score():
 func add_score(amount):
 	score += amount
 	scorelabel.update_score()
+func _set_jump(val:int):
+	JUMP_VELOCITY=val
 	

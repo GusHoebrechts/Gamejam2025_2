@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://c1ccrm3ss1tjj"]
+[gd_scene load_steps=44 format=3 uid="uid://c1ccrm3ss1tjj"]
 
 [ext_resource type="Texture2D" uid="uid://d2q28c5dsbxlf" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/Pillar End.png" id="1_3nkoi"]
 [ext_resource type="Texture2D" uid="uid://bxtam566w8d2v" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/Museum Floor.png" id="1_hgffc"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cq77sqleqbdt" path="res://levels/Tiles/Pedestal.png" id="8_yh6h2"]
 [ext_resource type="Texture2D" uid="uid://b1iamkmuiiv8y" path="res://GUI/assets/uncategorized/Roof outside.png" id="9_eshh7"]
 [ext_resource type="Texture2D" uid="uid://danugjusyrw24" path="res://levels/Tiles/Chest.png" id="9_lecvj"]
+[ext_resource type="Texture2D" uid="uid://b4kilnd7hi0i2" path="res://free_assests/alpha.png" id="11_5eoex"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26u7d"]
 texture = ExtResource("1_3nkoi")
@@ -40,7 +41,6 @@ texture = SubResource("CompressedTexture2D_lecvj")
 2:0/0 = 0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1vvhc"]
-load_path = "res://.godot/imported/Museum underground (1).png-5dfc21d70e9df91596451430cdc26462.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r6xye"]
 texture = SubResource("CompressedTexture2D_1vvhc")
@@ -124,6 +124,11 @@ texture = ExtResource("3_2cabu")
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:0/0 = 0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gmkd0"]
+texture = ExtResource("11_5eoex")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t7tip"]
 texture = ExtResource("1_yh8r4")
@@ -419,6 +424,7 @@ sources/16 = SubResource("TileSetAtlasSource_dq8ii")
 sources/17 = SubResource("TileSetAtlasSource_lecvj")
 sources/18 = SubResource("TileSetAtlasSource_1vvhc")
 sources/19 = SubResource("TileSetAtlasSource_y2ol1")
+sources/20 = SubResource("TileSetAtlasSource_gmkd0")
 
 [node name="Ground" type="TileMapLayer" groups=["Ground"]]
 texture_filter = 1
