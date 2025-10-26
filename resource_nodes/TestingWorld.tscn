@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj2gdnvhwcci7"]
+
+[ext_resource type="PackedScene" uid="uid://c1ccrm3ss1tjj" path="res://tilemaps/ground.tscn" id="1_8faaj"]
+[ext_resource type="PackedScene" uid="uid://cm8jsnwi5bsy8" path="res://characters/Player.tscn" id="2_kfbri"]
+[ext_resource type="PackedScene" uid="uid://cr7v1l3clgmko" path="res://resource_nodes/Camera.tscn" id="3_cclrr"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Ground" parent="." instance=ExtResource("1_8faaj")]
+tile_map_data = PackedByteArray(0, 0, 255, 255, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_kfbri")]
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_cclrr")]
+player = NodePath("../Player")

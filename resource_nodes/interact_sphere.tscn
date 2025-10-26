@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://b56yepq5vx5ec"]
+
+[ext_resource type="Script" uid="uid://uoo8s1xq6mkw" path="res://scripting/interact_sphere.gd" id="1_67f7j"]
+[ext_resource type="Texture2D" uid="uid://bduffd7nw0wk2" path="res://free_assests/tilemap/tilemap.png" id="2_tv486"]
+[ext_resource type="Texture2D" uid="uid://cxqw5r3yti6s1" path="res://free_assests/tilemap/Sign.png" id="3_ckal8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gl2fy"]
+radius = 23.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23j66"]
+atlas = ExtResource("2_tv486")
+region = Rect2(115, 77, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j78fi"]
+atlas = ExtResource("3_ckal8")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ixe1e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23j66")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j78fi")
+}],
+"loop": true,
+"name": &"Interactable",
+"speed": 5.0
+}]
+
+[node name="InteractSphere" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_67f7j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gl2fy")
+debug_color = Color(0.131356, 0.6381002, 0.3128134, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ixe1e")
+animation = &"Interactable"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

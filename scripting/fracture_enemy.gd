@@ -99,7 +99,6 @@ func _flip_rays():
 		rc_high.rotation_degrees=0
 		rc_ground.position= Vector2(x,y)
 		$AnimatedSprite2D.flip_h = false
-		
 func _walk_arround():
 	$AnimatedSprite2D.play("Idle")
 	dx = abs(global_position.x - last_x)
@@ -113,10 +112,6 @@ func _walk_arround():
 			_flip_rays()
 			stuckTimer.start(0.75)
 			RestTimer.start(3)
-	
-	
-
-
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if dead: return
 	if(body.is_in_group("Hazard")):

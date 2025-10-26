@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://6btc6w2nan24"]
+
+[ext_resource type="Script" uid="uid://d11kk04ltrwkm" path="res://scripting/canvas_layer.gd" id="1_1u4do"]
+
+[node name="CanvasLayer" type="Node2D"]
+script = ExtResource("1_1u4do")
+
+[node name="Panel" type="Panel" parent="."]
+texture_filter = 1
+offset_top = -24.0
+offset_right = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 24.0
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true

@@ -20,15 +20,13 @@ var Coyote_Left = 0
 var Buffer_Left = 0
 var SpeedMult = 1
 
+signal interact
+
 func _ready() -> void:
 	floor_snap_length=Snap_Len
 
 
 func _physics_process(delta: float) -> void:
-	
-		
-		
-		
 	#Timers
 	if(is_on_floor()):
 		Coyote_Left=Coyote_Time
@@ -38,11 +36,11 @@ func _physics_process(delta: float) -> void:
 		Buffer_Left = Buffer_Time 
 	else:
 		Buffer_Left= max(Buffer_Left - delta, 0.0)
-	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		
+	if Input.is_action_just_pressed("Interact"):
+		interact.emit()
 	if Input.is_action_just_pressed("Reset"):
 		_reset()
 	# Handle jump.
