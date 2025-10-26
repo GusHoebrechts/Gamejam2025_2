@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=4 uid="uid://cus1pw6rlogkw"]
+[gd_scene load_steps=22 format=4 uid="uid://cus1pw6rlogkw"]
 
 [ext_resource type="PackedScene" uid="uid://cm8jsnwi5bsy8" path="res://characters/Player.tscn" id="1_4ykhg"]
+[ext_resource type="Script" uid="uid://hrotef21hojb" path="res://levels/notes/tutorial.gd" id="1_i8flm"]
 [ext_resource type="PackedScene" uid="uid://d1q0agfsjrlvy" path="res://resource_nodes/TextBox2.tscn" id="2_arifd"]
 [ext_resource type="PackedScene" uid="uid://dyyiodgopnanx" path="res://resource_nodes/RespawnPoint.tscn" id="2_nen2m"]
 [ext_resource type="PackedScene" uid="uid://ciaqhw0fkf51t" path="res://resource_nodes/Background.tscn" id="3_arifd"]
@@ -46,6 +47,7 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_i8flm")
 
 [node name="Player" parent="." node_paths=PackedStringArray("teleport") instance=ExtResource("1_4ykhg")]
 position = Vector2(1043, -81)
@@ -116,5 +118,4 @@ position = Vector2(1274, -104)
 
 [connection signal="body_entered" from="InteractSwitch" to="InteractSwitch" method="_on_body_entered"]
 [connection signal="body_exited" from="InteractSwitch" to="InteractSwitch" method="_on_body_exited"]
-[connection signal="body_entered" from="InteractSwitch2" to="InteractSwitch2" method="_on_body_entered"]
 [connection signal="body_exited" from="InteractSwitch2" to="Player" method="_on_interact_switch_2_body_exited"]
