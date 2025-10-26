@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://drdweutxkrbwl"]
+[gd_scene load_steps=19 format=4 uid="uid://d4e3k5kygbsix"]
 
 [ext_resource type="Script" uid="uid://baw7b7bh4k78p" path="res://levels/notes/next_level.gd" id="1_majvs"]
 [ext_resource type="PackedScene" uid="uid://cm8jsnwi5bsy8" path="res://characters/Player.tscn" id="2_y03u4"]
@@ -9,14 +9,15 @@
 [ext_resource type="PackedScene" uid="uid://cr7v1l3clgmko" path="res://resource_nodes/Camera.tscn" id="7_luu2m"]
 [ext_resource type="PackedScene" uid="uid://x8xlp656yn55" path="res://resource_nodes/Killbox.tscn" id="8_h4pmg"]
 [ext_resource type="PackedScene" uid="uid://crmwllx118wgv" path="res://characters/enemy.tscn" id="9_278iv"]
-[ext_resource type="PackedScene" uid="uid://dhl13w7hlp2uq" path="res://resource_nodes/Gate_Mechanism.tscn" id="10_k0fo4"]
-[ext_resource type="PackedScene" uid="uid://80j55l6x082t" path="res://resource_nodes/LaserWall.tscn" id="11_468c8"]
-[ext_resource type="PackedScene" uid="uid://d0ynyxm1giq1c" path="res://resource_nodes/Sign.tscn" id="12_i47d7"]
+[ext_resource type="PackedScene" path="res://resource_nodes/Gate_Mechanism.tscn" id="10_k0fo4"]
+[ext_resource type="PackedScene" path="res://resource_nodes/LaserWall.tscn" id="11_468c8"]
+[ext_resource type="PackedScene" path="res://resource_nodes/Sign.tscn" id="12_i47d7"]
 [ext_resource type="PackedScene" uid="uid://dnhjlfe38j4wy" path="res://scripting/Enemies/gargoyle.tscn" id="13_dsdao"]
 [ext_resource type="PackedScene" uid="uid://c2mkpo4vnnwvr" path="res://resource_nodes/change_respawn.tscn" id="14_brtku"]
 [ext_resource type="PackedScene" uid="uid://cs76c88wh07cm" path="res://GUI/Scenes/Score.tscn" id="15_n6f41"]
-[ext_resource type="PackedScene" uid="uid://cxxeiqhu5w2vy" path="res://resource_nodes/Next.tscn" id="16_fwrml"]
-[ext_resource type="PackedScene" path="res://chest.tscn" id="16_majvs"]
+[ext_resource type="PackedScene" path="res://resource_nodes/Next.tscn" id="16_fwrml"]
+[ext_resource type="PackedScene" uid="uid://fcxo53xe4ymp" path="res://chest.tscn" id="16_majvs"]
+[ext_resource type="PackedScene" uid="uid://y7va44rqyi8v" path="res://GUI/Scenes/pause_menu.tscn" id="18_gyhnd"]
 
 [node name="Next_Level_2" type="Node2D"]
 script = ExtResource("1_majvs")
@@ -165,5 +166,7 @@ player = NodePath("../Player")
 [node name="Gargoyle12" parent="." node_paths=PackedStringArray("player") instance=ExtResource("13_dsdao")]
 position = Vector2(-146, -172)
 player = NodePath("../Player")
+
+[node name="Pausemenu" parent="." instance=ExtResource("18_gyhnd")]
 
 [connection signal="timeout" from="Score/Timer" to="Player" method="_on_timer_timeout"]

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dnhjlfe38j4wy" path="res://scripting/Enemies/gargoyle.tscn" id="4_kx6l7"]
 [ext_resource type="PackedScene" uid="uid://y7va44rqyi8v" path="res://GUI/Scenes/pause_menu.tscn" id="5_n46q3"]
 [ext_resource type="PackedScene" uid="uid://fcxo53xe4ymp" path="res://chest.tscn" id="6_btoec"]
-[ext_resource type="PackedScene" uid="uid://dtbbrq8ll2aps" path="res://GUI/Scenes/Score.tscn" id="7_gwceb"]
+[ext_resource type="PackedScene" uid="uid://cs76c88wh07cm" path="res://GUI/Scenes/Score.tscn" id="7_gwceb"]
 [ext_resource type="PackedScene" path="res://resource_nodes/Next.tscn" id="8_l53as"]
 [ext_resource type="PackedScene" uid="uid://c2mkpo4vnnwvr" path="res://resource_nodes/change_respawn.tscn" id="9_3sk1a"]
 [ext_resource type="PackedScene" uid="uid://x8xlp656yn55" path="res://resource_nodes/Killbox.tscn" id="10_08mmt"]
@@ -20,7 +20,7 @@ scorelabel = NodePath("../Score")
 
 [node name="Camera2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_bt44k")]
 zoom = Vector2(5, 5)
-limit_right = 3000
+limit_right = 6000
 limit_bottom = 50
 player = NodePath("../Player")
 
