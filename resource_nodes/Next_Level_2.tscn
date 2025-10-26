@@ -56,6 +56,9 @@ player = NodePath("../Player")
 [node name="Score" parent="." node_paths=PackedStringArray("player") instance=ExtResource("15_n6f41")]
 player = NodePath("../Player")
 
+[node name="Timer" type="Timer" parent="Score"]
+autostart = true
+
 [node name="Area2D" parent="." instance=ExtResource("16_fwrml")]
 position = Vector2(695, -71)
 next_level = "res://levels/TestingWorld.tscn"
@@ -162,3 +165,5 @@ player = NodePath("../Player")
 [node name="Gargoyle12" parent="." node_paths=PackedStringArray("player") instance=ExtResource("13_dsdao")]
 position = Vector2(-146, -172)
 player = NodePath("../Player")
+
+[connection signal="timeout" from="Score/Timer" to="Player" method="_on_timer_timeout"]

@@ -128,4 +128,3 @@ func _set_jump(val:int):
 
 func _on_timer_timeout() -> void:
 	add_score(-10)
-	pass # Replace with function body.

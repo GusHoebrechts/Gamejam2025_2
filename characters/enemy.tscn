@@ -581,7 +581,7 @@ frame_progress = 0.128511
 
 [node name="RayCast_High" type="RayCast2D" parent="."]
 position = Vector2(0, -26)
-target_position = Vector2(82, 0)
+target_position = Vector2(61, 0)
 
 [node name="RayCast_Low" type="RayCast2D" parent="."]
 position = Vector2(0, -9)
