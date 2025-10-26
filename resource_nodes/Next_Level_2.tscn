@@ -1,0 +1,96 @@
+[gd_scene load_steps=17 format=4 uid="uid://drdweutxkrbwl"]
+
+[ext_resource type="Script" uid="uid://baw7b7bh4k78p" path="res://levels/notes/next_level.gd" id="1_majvs"]
+[ext_resource type="PackedScene" uid="uid://cm8jsnwi5bsy8" path="res://characters/Player.tscn" id="2_y03u4"]
+[ext_resource type="PackedScene" uid="uid://c1ccrm3ss1tjj" path="res://tilemaps/ground.tscn" id="3_gyhnd"]
+[ext_resource type="PackedScene" uid="uid://b40o8gpda0lsh" path="res://tilemaps/Hazards.tscn" id="4_hdb74"]
+[ext_resource type="PackedScene" uid="uid://ciaqhw0fkf51t" path="res://resource_nodes/Background.tscn" id="5_wfbxv"]
+[ext_resource type="PackedScene" uid="uid://dyyiodgopnanx" path="res://resource_nodes/RespawnPoint.tscn" id="6_aqpp8"]
+[ext_resource type="PackedScene" uid="uid://cr7v1l3clgmko" path="res://resource_nodes/Camera.tscn" id="7_luu2m"]
+[ext_resource type="PackedScene" uid="uid://x8xlp656yn55" path="res://resource_nodes/Killbox.tscn" id="8_h4pmg"]
+[ext_resource type="PackedScene" uid="uid://crmwllx118wgv" path="res://characters/enemy.tscn" id="9_278iv"]
+[ext_resource type="PackedScene" uid="uid://dhl13w7hlp2uq" path="res://resource_nodes/Gate_Mechanism.tscn" id="10_k0fo4"]
+[ext_resource type="PackedScene" uid="uid://80j55l6x082t" path="res://resource_nodes/LaserWall.tscn" id="11_468c8"]
+[ext_resource type="PackedScene" uid="uid://d0ynyxm1giq1c" path="res://resource_nodes/Sign.tscn" id="12_i47d7"]
+[ext_resource type="PackedScene" uid="uid://dnhjlfe38j4wy" path="res://scripting/Enemies/gargoyle.tscn" id="13_dsdao"]
+[ext_resource type="PackedScene" uid="uid://c2mkpo4vnnwvr" path="res://resource_nodes/change_respawn.tscn" id="14_brtku"]
+[ext_resource type="PackedScene" path="res://GUI/Scenes/Score.tscn" id="15_n6f41"]
+[ext_resource type="PackedScene" uid="uid://cxxeiqhu5w2vy" path="res://resource_nodes/Next.tscn" id="16_fwrml"]
+
+[node name="Next_Level_2" type="Node2D"]
+script = ExtResource("1_majvs")
+
+[node name="Player" parent="." node_paths=PackedStringArray("teleport") instance=ExtResource("2_y03u4")]
+position = Vector2(233, -354)
+teleport = NodePath("../RespawnPoint")
+
+[node name="Ground" parent="." groups=["Floor"] instance=ExtResource("3_gyhnd")]
+position = Vector2(-3, -33)
+tile_map_data = PackedByteArray("AAD/////AwABAAAAAAAAAP//AwACAAAAAAABAP//AwADAAAAAAAGAP7/AwABAAAAAAAHAP7/AwADAAAAAAALAPz/AwAAAAAAAAAOAPv/AwAAAAAAAAANAOz/AwAMAAUAAAALAN7/FAAAAAAAAAAMAN7/FAAAAAAAAAAMAN//FAAAAAAAAAANAN//FAAAAAAAAAAOAN//FAAAAAAAAAAPAN//FAAAAAAAAAAQAN//FAAAAAAAAAARAN//FAAAAAAAAAASAN//FAAAAAAAAAASAN7/FAAAAAAAAAATAN7/FAAAAAAAAAAUAN7/FAAAAAAAAAAVAN7/FAAAAAAAAAAWAN7/FAAAAAAAAAAaAO//FAAAAAAAAAAOANz/FAAAAAAAAAAPANz/FAAAAAAAAAAPAN3/FAAAAAAAAAAOAN3/FAAAAAAAAAAOAN7/FAAAAAAAAAAPAN7/FAAAAAAAAAA=")
+
+[node name="Hazards" parent="." instance=ExtResource("4_hdb74")]
+position = Vector2(0, -34)
+tile_map_data = PackedByteArray("AAAmAP7/AwANAAEAAAAnAP7/AwANAAEAAAAoAP7/AwANAAEAAAApAP7/AwANAAEAAAAmAP//AwANAAMAAAAnAP//AwANAAMAAAAoAP//AwANAAMAAAApAP//AwANAAMAAAApAAAAAwANAAMAAAAoAAAAAwANAAMAAAAnAAAAAwANAAMAAAAmAAAAAwANAAMAAAA=")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("5_wfbxv")]
+
+[node name="RespawnPoint" parent="." instance=ExtResource("6_aqpp8")]
+position = Vector2(11, -79)
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_luu2m")]
+zoom = Vector2(7, 7)
+limit_right = 1600
+limit_bottom = 0
+player = NodePath("../Player")
+
+[node name="Killbox" parent="." node_paths=PackedStringArray("teleport") instance=ExtResource("8_h4pmg")]
+position = Vector2(1, -121)
+teleport = NodePath("../RespawnPoint")
+
+[node name="CharacterBody2D" parent="." node_paths=PackedStringArray("player", "ground", "hazard") instance=ExtResource("9_278iv")]
+position = Vector2(333, -31)
+player = NodePath("../Player")
+ground = NodePath("../Ground")
+hazard = NodePath("../Hazards")
+
+[node name="InteractSwitch2" parent="." instance=ExtResource("10_k0fo4")]
+position = Vector2(1171, -11)
+
+[node name="LaserWall" parent="InteractSwitch2" instance=ExtResource("11_468c8")]
+position = Vector2(-44, -197)
+
+[node name="CharacterBody2D2" parent="." node_paths=PackedStringArray("player", "ground", "hazard") instance=ExtResource("9_278iv")]
+position = Vector2(1186, -12)
+player = NodePath("../Player")
+ground = NodePath("../Ground")
+hazard = NodePath("../Hazards")
+
+[node name="Node2D" parent="." instance=ExtResource("12_i47d7")]
+position = Vector2(294, -57)
+
+[node name="InteractSwitch3" parent="." instance=ExtResource("10_k0fo4")]
+position = Vector2(1187, -58)
+
+[node name="LaserWall" parent="InteractSwitch3" instance=ExtResource("11_468c8")]
+position = Vector2(-60, 25)
+
+[node name="InteractSwitch4" parent="." instance=ExtResource("10_k0fo4")]
+position = Vector2(932, -60)
+
+[node name="LaserWall" parent="InteractSwitch4" instance=ExtResource("11_468c8")]
+position = Vector2(2, 27)
+
+[node name="Gargoyle" parent="." node_paths=PackedStringArray("player") instance=ExtResource("13_dsdao")]
+position = Vector2(448, -296)
+player = NodePath("../Player")
+
+[node name="ChangeRespawn" parent="." node_paths=PackedStringArray("respawn") instance=ExtResource("14_brtku")]
+position = Vector2(210, -346)
+respawn = NodePath("../RespawnPoint")
+
+[node name="Score" parent="." node_paths=PackedStringArray("player") instance=ExtResource("15_n6f41")]
+player = NodePath("../Player")
+
+[node name="Area2D" parent="." instance=ExtResource("16_fwrml")]
+position = Vector2(76, -121)
+next_level = "res://levels/TestingWorld.tscn"
