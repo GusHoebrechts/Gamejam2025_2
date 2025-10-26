@@ -1,4 +1,9 @@
-extends Control
+extends CanvasLayer
+
+func _ready()-> void:
+	hide()
+	pass
+	
 
 func _process(delta):
 	if Input.is_action_just_pressed("pause"):

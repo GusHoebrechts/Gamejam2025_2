@@ -5,7 +5,7 @@ var projectile = preload("res://scripting/Enemies/water_projectile.tscn")
 
 @onready var himself = get_node("CharacterBody2D")
 @export var player:CharacterBody2D
-var SPEED = 20
+var SPEED = 50
 var direction = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,7 +15,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	
+	move(player)
 	
 	pass
 	

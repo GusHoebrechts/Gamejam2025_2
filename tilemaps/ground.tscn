@@ -1,6 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1ccrm3ss1tjj"]
+[gd_scene load_steps=18 format=3 uid="uid://c1ccrm3ss1tjj"]
 
+[ext_resource type="Texture2D" uid="uid://d2q28c5dsbxlf" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/Pillar End.png" id="1_3nkoi"]
+[ext_resource type="Texture2D" uid="uid://bxtam566w8d2v" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/Museum Floor.png" id="1_hgffc"]
 [ext_resource type="Texture2D" uid="uid://bduffd7nw0wk2" path="res://free_assests/tilemap/tilemap.png" id="1_yh8r4"]
+[ext_resource type="Texture2D" uid="uid://bmbyg85a8qhcc" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/Pillar shaft.png" id="2_eshh7"]
+[ext_resource type="Texture2D" uid="uid://eyau5hwjg3ox" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/Floor Outside (1).png" id="3_2cabu"]
+[ext_resource type="Texture2D" uid="uid://b13jlumocfofw" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/Platform.png" id="3_6vedu"]
+[ext_resource type="Texture2D" uid="uid://dhjgoc5a4rir0" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/Outside Floore.png" id="4_7k2hg"]
+[ext_resource type="Texture2D" uid="uid://dyaqxd5177gn8" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/Floor Outside.png" id="5_6vedu"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26u7d"]
+texture = ExtResource("1_3nkoi")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_40lbk"]
+texture = ExtResource("2_eshh7")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wucd7"]
+texture = ExtResource("3_2cabu")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t7tip"]
 texture = ExtResource("1_yh8r4")
@@ -225,9 +250,44 @@ use_texture_padding = false
 19:8/0 = 0
 19:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hgffc"]
+texture = ExtResource("3_6vedu")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7yi2b"]
+texture = ExtResource("1_hgffc")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y3a2s"]
+texture = ExtResource("4_7k2hg")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3nkoi"]
+texture = ExtResource("5_6vedu")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
 [sub_resource type="TileSet" id="TileSet_tv015"]
 physics_layer_0/collision_layer = 1
 sources/3 = SubResource("TileSetAtlasSource_t7tip")
+sources/4 = SubResource("TileSetAtlasSource_hgffc")
+sources/5 = SubResource("TileSetAtlasSource_7yi2b")
+sources/6 = SubResource("TileSetAtlasSource_y3a2s")
+sources/7 = SubResource("TileSetAtlasSource_3nkoi")
+sources/0 = SubResource("TileSetAtlasSource_26u7d")
+sources/1 = SubResource("TileSetAtlasSource_40lbk")
+sources/2 = SubResource("TileSetAtlasSource_wucd7")
 
 [node name="Ground" type="TileMapLayer"]
 texture_filter = 1
