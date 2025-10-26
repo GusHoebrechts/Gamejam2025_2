@@ -289,6 +289,6 @@ sources/0 = SubResource("TileSetAtlasSource_26u7d")
 sources/1 = SubResource("TileSetAtlasSource_40lbk")
 sources/2 = SubResource("TileSetAtlasSource_wucd7")
 
-[node name="Ground" type="TileMapLayer"]
+[node name="Ground" type="TileMapLayer" groups=["Ground"]]
 texture_filter = 1
 tile_set = SubResource("TileSet_tv015")

@@ -1,13 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bb1tg3n64s42p"]
+[gd_scene load_steps=3 format=3 uid="uid://dwraml1a3ass8"]
 
-[ext_resource type="Script" uid="uid://bfqgvgrjekmac" path="res://scripting/Interactive/interact_switch.gd" id="1_bbo7w"]
+[ext_resource type="Script" uid="uid://csk233dwv6tqh" path="res://scripting/Interactive/interact_switch_door.gd" id="1_j5lax"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gl2fy"]
 radius = 23.0
 
-[node name="InteractSwitch" type="Area2D"]
+[node name="InteractSphere" type="Area2D"]
 collision_layer = 8
-script = ExtResource("1_bbo7w")
+script = ExtResource("1_j5lax")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_gl2fy")

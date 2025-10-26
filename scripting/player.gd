@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var teleport:Node2D
 const SPEED = 145.0
 
-const JUMP_VELOCITY = -300
+const JUMP_VELOCITY = -230
 const Coyote_Time = 0.1
 const Buffer_Time = 0.1
 const Snap_Len = 8
@@ -109,3 +109,7 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 func _reset():
 	global_position=teleport.global_position #
 	velocity=Vector2.ZERO
+
+
+func _on_interact_switch_2_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.

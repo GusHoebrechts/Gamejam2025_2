@@ -1,79 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://b40o8gpda0lsh"]
+[gd_scene load_steps=6 format=3 uid="uid://b40o8gpda0lsh"]
 
-[ext_resource type="Texture2D" uid="uid://b5hq0d3ntksbx" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/tile075.png" id="1_lyio8"]
-[ext_resource type="Texture2D" uid="uid://cugq8gidv1cjb" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/tile074.png" id="2_ykbae"]
-[ext_resource type="Texture2D" uid="uid://dsaqphb3pv8ah" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/laser_activate.png" id="3_8y7a6"]
-[ext_resource type="Texture2D" uid="uid://cele4qhskdpl1" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/laser_spikes_activate.png" id="4_ukrq1"]
-[ext_resource type="Texture2D" uid="uid://bokspanwisljr" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/laser_spikes_deactivate.png" id="5_hbx5j"]
-[ext_resource type="Texture2D" uid="uid://d3ie7uen51wlc" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/laser_spikes_idle.png" id="6_y1tl1"]
-[ext_resource type="Texture2D" uid="uid://dqn564fqamget" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/laser_turret.png" id="7_ohwf4"]
 [ext_resource type="Texture2D" uid="uid://ydcivlwvxyxg" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/tile086.png" id="8_4dan4"]
-[ext_resource type="Texture2D" uid="uid://cneiqlds7nlae" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/tile055.png" id="9_4te6d"]
 [ext_resource type="Texture2D" uid="uid://bduffd7nw0wk2" path="res://free_assests/tilemap/tilemap.png" id="9_ykbae"]
-[ext_resource type="Texture2D" uid="uid://cysv68ej2gcpw" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/tile065.png" id="10_weg5y"]
-[ext_resource type="Texture2D" uid="uid://bhvkkjghv2htc" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/tile064.png" id="11_ugroy"]
-[ext_resource type="Texture2D" uid="uid://w6uq2al3m6jd" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/tile054.png" id="12_16er5"]
-[ext_resource type="Texture2D" uid="uid://hlponorgtpuo" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/laser_idle.png" id="13_wi1yc"]
-[ext_resource type="Texture2D" uid="uid://cohbrcigc47ec" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/laser_deactivate.png" id="14_qhnoi"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k8php"]
-texture = ExtResource("1_lyio8")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ftxf"]
-texture = ExtResource("2_ykbae")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_15x0c"]
-texture = ExtResource("3_8y7a6")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-9:0/0 = 0
-10:0/0 = 0
-11:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6yp5g"]
-texture = ExtResource("4_ukrq1")
-texture_region_size = Vector2i(32, 16)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fffma"]
-texture = ExtResource("5_hbx5j")
-texture_region_size = Vector2i(32, 16)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5bqqh"]
-texture = ExtResource("6_y1tl1")
-texture_region_size = Vector2i(32, 16)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hviro"]
-texture = ExtResource("7_ohwf4")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-9:0/0 = 0
-10:0/0 = 0
-11:0/0 = 0
-12:0/0 = 0
-13:0/0 = 0
-14:0/0 = 0
-15:0/0 = 0
-16:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t3khm"]
 texture = ExtResource("8_4dan4")
@@ -269,70 +197,12 @@ texture_region_size = Vector2i(18, 18)
 18:8/0 = 0
 19:8/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y12gp"]
-texture = ExtResource("9_4te6d")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sud0x"]
-texture = ExtResource("10_weg5y")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ttv73"]
-texture = ExtResource("11_ugroy")
-texture_region_size = Vector2i(32, 16)
-0:1/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qseo7"]
-texture = ExtResource("12_16er5")
-texture_region_size = Vector2i(32, 16)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t08q8"]
-texture = ExtResource("13_wi1yc")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ypjxn"]
-texture = ExtResource("14_qhnoi")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-
 [sub_resource type="TileSet" id="TileSet_5vw5u"]
 physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 0
-sources/0 = SubResource("TileSetAtlasSource_k8php")
-sources/1 = SubResource("TileSetAtlasSource_7ftxf")
 sources/2 = SubResource("TileSetAtlasSource_t3khm")
-sources/4 = SubResource("TileSetAtlasSource_y12gp")
-sources/5 = SubResource("TileSetAtlasSource_sud0x")
-sources/6 = SubResource("TileSetAtlasSource_ttv73")
-sources/7 = SubResource("TileSetAtlasSource_qseo7")
-sources/8 = SubResource("TileSetAtlasSource_t08q8")
-sources/9 = SubResource("TileSetAtlasSource_ypjxn")
-sources/10 = SubResource("TileSetAtlasSource_15x0c")
-sources/11 = SubResource("TileSetAtlasSource_6yp5g")
-sources/12 = SubResource("TileSetAtlasSource_fffma")
-sources/13 = SubResource("TileSetAtlasSource_5bqqh")
-sources/14 = SubResource("TileSetAtlasSource_hviro")
 sources/3 = SubResource("TileSetAtlasSource_8y7a6")
 
-[node name="Hazards" type="TileMapLayer"]
+[node name="Hazards" type="TileMapLayer" groups=["Hazard"]]
 texture_filter = 1
 tile_set = SubResource("TileSet_5vw5u")

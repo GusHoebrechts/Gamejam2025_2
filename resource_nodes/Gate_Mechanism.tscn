@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://dhl13w7hlp2uq"]
+
+[ext_resource type="Script" uid="uid://csk233dwv6tqh" path="res://scripting/Interactive/interact_switch_door.gd" id="1_i45sw"]
+[ext_resource type="Texture2D" uid="uid://bduffd7nw0wk2" path="res://free_assests/tilemap/tilemap.png" id="5_2hngc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6l1y0"]
+size = Vector2(30, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfxcc"]
+atlas = ExtResource("5_2hngc")
+region = Rect2(76, 57, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0m4h1"]
+atlas = ExtResource("5_2hngc")
+region = Rect2(114, 57, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mh7b7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfxcc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0m4h1")
+}],
+"loop": true,
+"name": &"flipped",
+"speed": 5.0
+}]
+
+[node name="InteractSwitch2" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_i45sw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -16)
+shape = SubResource("RectangleShape2D_6l1y0")
+debug_color = Color(0.131356, 0.6381002, 0.3128134, 0.41960785)
+
+[node name="Switch" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, -15)
+sprite_frames = SubResource("SpriteFrames_mh7b7")
+animation = &"flipped"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

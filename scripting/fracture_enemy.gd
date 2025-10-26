@@ -58,7 +58,6 @@ func _physics_process(delta: float) -> void:
 		State.Idle:
 			$AnimatedSprite2D.play("Idle")
 			_walk_arround()
-			
 		State.Chase:
 			$AnimatedSprite2D.play('Walking')
 			dx=abs(last_x-global_position.x)
@@ -83,7 +82,6 @@ func _physics_process(delta: float) -> void:
 		State.Death:
 			velocity=Vector2.ZERO
 		State.Aggro_Chase:
-			print("aggro chase")
 			if(aggro):
 				timer.start(5)
 			$AnimatedSprite2D.play('Walking')
